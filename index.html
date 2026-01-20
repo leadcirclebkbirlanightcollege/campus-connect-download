@@ -152,8 +152,42 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+<script>
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const btn = document.createElement("button");
+  btn.innerText = "📲 Install Campus Connect";
+  btn.style.position = "fixed";
+  btn.style.bottom = "90px";
+  btn.style.right = "20px";
+  btn.style.padding = "14px 20px";
+  btn.style.borderRadius = "30px";
+  btn.style.border = "none";
+  btn.style.fontWeight = "700";
+  btn.style.background = "linear-gradient(135deg,#00f5ff,#0077ff)";
+  btn.style.color = "#020b1c";
+  btn.style.zIndex = "2000";
+  btn.style.cursor = "pointer";
+
+  document.body.appendChild(btn);
+
+  btn.addEventListener("click", async () => {
+    btn.remove();
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+  });
+});
+</script>
+
+  
 </body>
 </html>
+
 
 
 
