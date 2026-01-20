@@ -1,3 +1,42 @@
+/* PAGE ENTRY */
+.card{
+  animation: cardEnter 1s ease forwards;
+  opacity:0;
+  transform: translateY(40px) scale(0.95);
+}
+
+@keyframes cardEnter{
+  to{
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* LOGO ANIMATION */
+.logo{
+  animation: logoZoom 1.2s ease forwards;
+}
+
+@keyframes logoZoom{
+  0%{transform:scale(0.6);opacity:0}
+  100%{transform:scale(1);opacity:1}
+}
+
+/* BUTTON STAGGER */
+.btn{
+  animation: btnPop .6s ease forwards;
+  opacity:0;
+}
+
+.btn:nth-of-type(1){animation-delay:.6s}
+.btn:nth-of-type(2){animation-delay:.9s}
+
+@keyframes btnPop{
+  to{opacity:1; transform:scale(1)}
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -77,3 +116,4 @@ h1 {
 .footer span {
   color: #00f5ff;
 }
+
