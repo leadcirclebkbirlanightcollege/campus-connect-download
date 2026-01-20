@@ -65,7 +65,7 @@ h2{text-align:center; font-size:30px; margin-bottom:40px;}
 
 .story{max-width:800px; margin:auto; opacity:.85;}
 
-/* BADGE & STRIP */
+/* BADGE */
 .approval span{
   display:inline-block;
   margin-top:20px;
@@ -76,11 +76,7 @@ h2{text-align:center; font-size:30px; margin-bottom:40px;}
   font-weight:600;
 }
 
-.college-strip{margin-top:15px;}
-.college-strip img{height:55px;}
-.college-strip p{font-size:14px; opacity:.8;}
-
-/* CARDS */
+/* CARDS LAYOUT */
 .why-cards,
 .cards{
   display:grid;
@@ -88,19 +84,55 @@ h2{text-align:center; font-size:30px; margin-bottom:40px;}
   gap:30px;
 }
 
-.card{
+/* ✨ CARD BASE */
+.card,
+.why-card{
+  position:relative;
   background:rgba(255,255,255,.06);
-  border-radius:20px;
-  padding:30px;
+  border-radius:22px;
+  padding:32px;
   backdrop-filter:blur(12px);
   text-align:center;
+  transition:all .35s ease;
+  border:1px solid rgba(255,255,255,0.06);
+  overflow:hidden;
 }
 
-/* CORE TEAM TEXT FLOW */
+/* ✨ GLOW LAYER */
+.card::before,
+.why-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,245,255,.15),
+    transparent
+  );
+  opacity:0;
+  transition:opacity .35s ease;
+}
+
+/* ✨ HOVER EFFECT */
+.card:hover,
+.why-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.45),
+    0 0 0 1px rgba(0,245,255,.25);
+}
+
+.card:hover::before,
+.why-card:hover::before{
+  opacity:1;
+}
+
+/* CORE TEAM TEXT */
 .role{
   color:#00f5ff;
   font-weight:600;
-  margin:10px 0;
+  margin:12px 0;
 }
 
 .desc{
@@ -109,9 +141,7 @@ h2{text-align:center; font-size:30px; margin-bottom:40px;}
 }
 
 /* DOWNLOAD */
-.download{
-  text-align:center;
-}
+.download{text-align:center;}
 
 .btn{
   display:inline-block;
@@ -134,4 +164,10 @@ h2{text-align:center; font-size:30px; margin-bottom:40px;}
 @keyframes fadeIn{
   from{opacity:0; transform:translateY(20px)}
   to{opacity:1; transform:translateY(0)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  h1{font-size:34px}
+  h2{font-size:26px}
 }
