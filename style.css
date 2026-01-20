@@ -5,15 +5,55 @@
   font-family:'Inter', sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:linear-gradient(180deg,#071a3a,#020b1c);
   color:#ffffff;
   line-height:1.7;
 }
 
-/* SECTION LAYOUT */
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:16px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(2,11,28,0.8);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.nav-logo{
+  font-weight:700;
+  letter-spacing:0.5px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  opacity:.85;
+}
+
+.nav-links a:hover{
+  opacity:1;
+}
+
+/* SECTIONS */
 section{
-  padding:90px 20px;
+  padding:120px 20px 90px;
   max-width:1100px;
   margin:auto;
 }
@@ -21,6 +61,22 @@ section{
 /* HERO */
 .hero{
   text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at center,#0b3a7a,transparent 60%);
+  opacity:0.25;
+  animation:bgMove 12s ease-in-out infinite alternate;
+  z-index:-1;
+}
+
+@keyframes bgMove{
+  from{transform:translateY(0)}
+  to{transform:translateY(-40px)}
 }
 
 .logo{
@@ -90,18 +146,20 @@ h2{
   color:#00f5ff;
 }
 
-/* SIMPLE FADE ANIMATION */
+/* SIMPLE FADE */
 .fade{
   animation:fadeIn 1.2s ease both;
 }
 
 @keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+/* MOBILE POLISH */
+@media(max-width:768px){
+  h1{font-size:34px}
+  h2{font-size:26px}
+  .navbar{padding:14px 20px}
+  .nav-links{gap:14px}
 }
