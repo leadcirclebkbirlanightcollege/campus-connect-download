@@ -24,14 +24,13 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(2,11,28,0.8);
+  background:rgba(2,11,28,0.85);
   backdrop-filter:blur(10px);
   z-index:1000;
 }
 
 .nav-logo{
   font-weight:700;
-  letter-spacing:0.5px;
 }
 
 .nav-links{
@@ -97,9 +96,40 @@ h2{
 
 .story{
   max-width:800px;
-  margin:auto;
+  margin:0 auto 20px;
   font-size:17px;
   opacity:.85;
+}
+
+/* APPROVAL BADGE */
+.approval{
+  margin:15px auto 10px;
+}
+
+.approval span{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:30px;
+  background:rgba(0,245,255,0.15);
+  color:#00f5ff;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* COLLEGE STRIP */
+.college-strip{
+  margin-top:15px;
+  opacity:0.9;
+}
+
+.college-strip img{
+  height:55px;
+  margin-bottom:6px;
+}
+
+.college-strip p{
+  font-size:14px;
+  opacity:0.8;
 }
 
 /* CARDS */
@@ -116,6 +146,20 @@ h2{
   border-radius:20px;
   padding:30px;
   backdrop-filter:blur(12px);
+}
+
+.card img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #00f5ff;
+  margin-bottom:15px;
+}
+
+.card span{
+  color:#00f5ff;
+  font-weight:600;
 }
 
 /* BUTTON */
@@ -156,10 +200,8 @@ h2{
   to{opacity:1; transform:translateY(0)}
 }
 
-/* MOBILE POLISH */
+/* MOBILE */
 @media(max-width:768px){
   h1{font-size:34px}
   h2{font-size:26px}
-  .navbar{padding:14px 20px}
-  .nav-links{gap:14px}
 }
