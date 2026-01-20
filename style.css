@@ -2,19 +2,40 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Segoe UI, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body{
-  background:radial-gradient(circle at top,#0b2a5c,#020b1c);
-  color:#fff;
+  background:linear-gradient(180deg,#071a3a,#020b1c);
+  color:#ffffff;
+  line-height:1.7;
+}
+
+/* GLOBAL SECTION FIX */
+section{
+  padding:80px 20px;
+}
+
+section > h2{
+  font-size:28px;
+  margin-bottom:40px;
+  text-align:center;
+}
+
+/* CONTENT WIDTH CONTROL */
+.hero,
+.why,
+.mentor,
+.team,
+.institution,
+.download{
+  max-width:1100px;
+  margin:auto;
 }
 
 /* HERO */
 .hero{
   text-align:center;
-  padding:60px 25px;
-  animation:fadeUp 1s ease forwards;
 }
 
 .logo{
@@ -22,37 +43,50 @@ body{
   margin-bottom:20px;
 }
 
+.hero h1{
+  font-size:38px;
+  margin-bottom:20px;
+}
+
 .story{
-  max-width:600px;
-  margin:auto;
-  font-size:15px;
-  opacity:.85;
+  max-width:800px;
+  margin:0 auto;
+  font-size:16px;
+  opacity:0.85;
 }
 
-/* TEAM */
-.team{
-  padding:50px 20px;
-  text-align:center;
+/* WHY SECTION */
+.why-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
 }
 
-.team h2{
-  margin-bottom:30px;
+.why-card{
+  background:rgba(255,255,255,0.06);
+  padding:30px;
+  border-radius:18px;
+  text-align:left;
 }
 
+/* FACULTY + TEAM SHARED CARD STYLE */
 .cards{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
 .card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.07);
   backdrop-filter:blur(10px);
-  border-radius:18px;
-  padding:25px 20px;
-  width:260px;
-  animation:fadeUp 1s ease forwards;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  transition:transform .3s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
 }
 
 .card img{
@@ -65,12 +99,13 @@ body{
 }
 
 .card h3{
-  margin-bottom:8px;
+  margin-bottom:10px;
+  font-size:20px;
 }
 
 .card p{
   font-size:14px;
-  opacity:.85;
+  opacity:0.85;
 }
 
 .card span{
@@ -78,42 +113,43 @@ body{
   font-weight:600;
 }
 
+/* INSTITUTION */
+.institution p{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  opacity:0.85;
+}
+
 /* DOWNLOAD */
 .download{
   text-align:center;
-  padding:60px 25px;
+  padding-bottom:100px;
 }
 
 .btn{
   display:inline-block;
-  padding:14px 30px;
-  border-radius:14px;
+  padding:16px 36px;
+  border-radius:16px;
   background:linear-gradient(135deg,#00f5ff,#0077ff);
   color:#020b1c;
   text-decoration:none;
-  font-weight:600;
-  margin-top:20px;
-  animation:fadeUp 1s ease forwards;
+  font-weight:700;
+  margin-top:25px;
 }
 
 .note{
   font-size:12px;
-  opacity:.7;
-  margin-top:10px;
+  opacity:0.7;
+  margin-top:12px;
 }
 
 .footer{
-  margin-top:30px;
+  margin-top:40px;
   font-size:12px;
-  opacity:.6;
+  opacity:0.6;
 }
 
 .footer span{
   color:#00f5ff;
-}
-
-/* ANIMATION */
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px)}
-  to{opacity:1; transform:translateY(0)}
 }
