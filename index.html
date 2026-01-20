@@ -5,11 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campus Connect</title>
 
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="progress-bar"></div>
 
 <!-- NAVBAR -->
 <nav class="navbar">
@@ -28,6 +33,7 @@
 
   <img src="logo.png" class="logo">
   <h1>Campus Connect</h1>
+
   <p class="story">
     Campus Connect is a student-driven digital initiative designed to provide a
     centralized, reliable, and efficient campus communication platform.
@@ -42,6 +48,8 @@
     <p>B. K. Birla Night College, Kalyan</p>
   </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- WHY -->
 <section id="why" class="fade">
@@ -60,16 +68,18 @@
 
     <div class="why-card">
       <h3>🎓 Student-Centric Design</h3>
-      <p>Simple, accessible, and department-friendly interface.</p>
+      <p>Simple, accessible, department-friendly interface.</p>
     </div>
   </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- CORE TEAM -->
 <section id="team" class="fade">
   <h2>Meet Our Core Team</h2>
 
-  <div class="cards team-cards">
+  <div class="cards">
 
     <div class="card">
       <h3>Atharv Jadhav</h3>
@@ -85,7 +95,7 @@
       <p class="role">Technical Architect & App Developer</p>
       <p class="desc">
         Responsible for application architecture, frontend development,
-        and overall performance optimization.
+        and performance optimization.
       </p>
     </div>
 
@@ -100,6 +110,8 @@
 
   </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- DOWNLOAD -->
 <section id="download" class="download fade">
@@ -119,7 +131,20 @@
   </p>
 </section>
 
+<!-- STICKY CTA -->
+<a href="#download" class="sticky-cta">
+  ⬇ Get App
+</a>
+
+<script>
+/* SCROLL PROGRESS BAR */
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById("progress-bar").style.width =
+    (scrollTop / height) * 100 + "%";
+});
+</script>
+
 </body>
 </html>
-
-
