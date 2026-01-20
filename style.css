@@ -5,13 +5,11 @@
   font-family:'Inter', sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{ scroll-behavior:smooth; }
 
 body{
   background:linear-gradient(180deg,#071a3a,#020b1c);
-  color:#ffffff;
+  color:#fff;
   line-height:1.7;
 }
 
@@ -29,10 +27,6 @@ body{
   z-index:1000;
 }
 
-.nav-logo{
-  font-weight:700;
-}
-
 .nav-links{
   list-style:none;
   display:flex;
@@ -46,9 +40,7 @@ body{
   opacity:.85;
 }
 
-.nav-links a:hover{
-  opacity:1;
-}
+.nav-links a:hover{ opacity:1; }
 
 /* SECTIONS */
 section{
@@ -58,79 +50,35 @@ section{
 }
 
 /* HERO */
-.hero{
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-
+.hero{text-align:center; position:relative;}
 .hero-bg{
   position:absolute;
   inset:0;
-  background:radial-gradient(circle at center,#0b3a7a,transparent 60%);
-  opacity:0.25;
-  animation:bgMove 12s ease-in-out infinite alternate;
+  background:radial-gradient(circle,#0b3a7a,transparent 60%);
+  opacity:.25;
   z-index:-1;
 }
 
-@keyframes bgMove{
-  from{transform:translateY(0)}
-  to{transform:translateY(-40px)}
-}
+.logo{width:120px; margin-bottom:20px;}
+h1{font-size:42px;}
+h2{text-align:center; font-size:30px; margin-bottom:40px;}
 
-.logo{
-  width:120px;
-  margin-bottom:20px;
-}
+.story{max-width:800px; margin:auto; opacity:.85;}
 
-h1{
-  font-size:42px;
-  font-weight:700;
-}
-
-h2{
-  font-size:30px;
-  margin-bottom:40px;
-  text-align:center;
-}
-
-.story{
-  max-width:800px;
-  margin:0 auto 20px;
-  font-size:17px;
-  opacity:.85;
-}
-
-/* APPROVAL BADGE */
-.approval{
-  margin:15px auto 10px;
-}
-
+/* BADGE & STRIP */
 .approval span{
   display:inline-block;
+  margin-top:20px;
   padding:10px 22px;
   border-radius:30px;
-  background:rgba(0,245,255,0.15);
+  background:rgba(0,245,255,.15);
   color:#00f5ff;
-  font-size:14px;
   font-weight:600;
 }
 
-/* COLLEGE STRIP */
-.college-strip{
-  margin-top:15px;
-  opacity:0.9;
-}
-
-.college-strip img{
-  height:55px;
-  margin-bottom:6px;
-}
-
-.college-strip p{
-  font-size:14px;
-  opacity:0.8;
-}
+.college-strip{margin-top:15px;}
+.college-strip img{height:55px;}
+.college-strip p{font-size:14px; opacity:.8;}
 
 /* CARDS */
 .why-cards,
@@ -140,31 +88,34 @@ h2{
   gap:30px;
 }
 
-.why-card,
 .card{
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,.06);
   border-radius:20px;
   padding:30px;
   backdrop-filter:blur(12px);
+  text-align:center;
 }
 
-.card img{
-  width:100px;
-  height:100px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid #00f5ff;
-  margin-bottom:15px;
-}
-
-.card span{
+/* CORE TEAM TEXT FLOW */
+.role{
   color:#00f5ff;
   font-weight:600;
+  margin:10px 0;
 }
 
-/* BUTTON */
+.desc{
+  font-size:14px;
+  opacity:.85;
+}
+
+/* DOWNLOAD */
+.download{
+  text-align:center;
+}
+
 .btn{
   display:inline-block;
+  margin-top:20px;
   padding:16px 38px;
   border-radius:16px;
   background:linear-gradient(135deg,#00f5ff,#0077ff);
@@ -174,34 +125,13 @@ h2{
 }
 
 /* FOOTER */
-.note{
-  font-size:12px;
-  opacity:0.7;
-  margin-top:12px;
-}
+.note{font-size:12px; opacity:.7; margin-top:12px;}
+.footer{margin-top:40px; font-size:12px; opacity:.6;}
+.footer span{color:#00f5ff;}
 
-.footer{
-  margin-top:40px;
-  font-size:12px;
-  opacity:0.6;
-}
-
-.footer span{
-  color:#00f5ff;
-}
-
-/* SIMPLE FADE */
-.fade{
-  animation:fadeIn 1.2s ease both;
-}
-
+/* FADE */
+.fade{animation:fadeIn 1.2s ease both;}
 @keyframes fadeIn{
   from{opacity:0; transform:translateY(20px)}
   to{opacity:1; transform:translateY(0)}
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  h1{font-size:34px}
-  h2{font-size:26px}
 }
