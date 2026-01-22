@@ -1,133 +1,71 @@
-/* =========================
-   INDEX PAGE STYLES ONLY
-   ========================= */
-
-/* Page Wrapper */
-.index-page {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* =========================
-   HERO / INTRO SECTION
-   ========================= */
 .hero {
-  padding: 120px 20px 80px;
   text-align: center;
+  padding: 110px 20px 80px;
 }
-
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-size: 52px;
   font-weight: 700;
-  margin-bottom: 12px;
+}
+.tagline {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #c9d6f2;
+}
+.badges {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8fe9ec;
 }
 
-.hero p {
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-  color: #cfd8e3;
-}
-
-/* =========================
-   WHY CARDS
-   ========================= */
-.features {
+.why {
+  padding: 70px 20px;
   max-width: 1100px;
-  margin: 60px auto 80px;
+  margin: auto;
+}
+.why h2 {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 24px;
-  padding: 0 20px;
 }
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 26px 22px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+.why-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  padding: 26px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-.feature-card:hover {
+.why-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+.why-card h3 {
+  margin-bottom: 10px;
+  color: #2de2e6;
 }
 
-.feature-card h3 {
-  font-size: 1.15rem;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.feature-card p {
-  font-size: 0.95rem;
-  color: #cfd8e3;
-}
-
-/* =========================
-   DOWNLOAD SECTION
-   ========================= */
-.download-section {
+.download {
   text-align: center;
-  padding: 100px 20px 120px;
+  padding: 80px 20px;
 }
-
-.download-section h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 22px;
-}
-
-/* Download Button */
 .download-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 34px;
-  font-size: 1rem;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2de2e6, #3a7bff);
+  color: #021018;
+  border-radius: 30px;
   font-weight: 600;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #00e5ff, #1da1ff);
-  color: #00131a;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.35);
-  transition: all 0.35s ease;
+  transition: transform 0.2s ease;
 }
-
 .download-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(0, 229, 255, 0.55);
+  transform: scale(1.05);
 }
-
-/* Download Note */
-.download-note {
+.note {
   margin-top: 14px;
-  font-size: 0.85rem;
-  color: #a8b3c4;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-.index-footer {
-  padding: 28px 16px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #9fb0c3;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* =========================
-   MOBILE TWEAKS
-   ========================= */
-@media (max-width: 600px) {
-  .hero {
-    padding-top: 90px;
-  }
-
-  .download-section {
-    padding-bottom: 100px;
-  }
+  font-size: 13px;
+  color: #9fb0cf;
 }
