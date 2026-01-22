@@ -246,3 +246,25 @@ h2{ font-size:24px; margin-bottom:28px; text-align:center; }
   opacity:0.85;
   line-height:1.6;
 }
+
+/* ================= CORE TEAM GRID FIX ================= */
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:28px;
+  justify-items:center;          /* 👈 card center */
+}
+
+/* Force equal card width */
+.team-card{
+  width:100%;
+  max-width:320px;               /* 👈 keeps symmetry */
+}
+
+/* Center grid when row is incomplete */
+@media (min-width: 900px){
+  .team-grid{
+    justify-content:center;      /* 👈 KEY FIX */
+  }
+}
