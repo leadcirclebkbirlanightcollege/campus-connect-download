@@ -233,3 +233,17 @@ nav a.active {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* Page transition */
+body {
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+body.page-exit {
+  opacity: 0;
+}
