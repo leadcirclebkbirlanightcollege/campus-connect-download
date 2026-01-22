@@ -5,166 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Campus Connect</title>
 
-  <!-- FAVICON -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- GOOGLE FONT -->
+  <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- BASE + INDEX CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
 
-
 <body>
 
-<!-- PROGRESS BAR -->
 <div id="progress-bar"></div>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo">Campus Connect</div>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="#about" class="active">About</a></li>
     <li><a href="#why">Why</a></li>
     <li><a href="core-team.html">Core Team</a></li>
     <li><a href="#download">Download</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section id="about" class="hero fade">
+<section id="about" class="hero">
   <div class="hero-bg"></div>
 
   <img src="logo.png" class="logo">
   <h1>Campus Connect</h1>
-
-  <p class="story">
-    Campus Connect is a student-driven digital initiative designed to provide a
-    centralized, reliable, and efficient campus communication platform.
+  <p class="hero-tagline">
+    One trusted platform for official campus communication.
   </p>
 
   <div class="approval">
-    <span>✔ Faculty Approved Project</span>
-  </div>
-
-  <div class="college-strip">
-    <img src="college-logo.png">
-    <p>B. K. Birla Night College, Kalyan</p>
-    
+    <span>✔ Faculty Approved Initiative</span>
+    <span>🎓 Student-Centric Design</span>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- WHY -->
-<section id="why" class="fade">
+<section id="why">
   <h2>Why Campus Connect?</h2>
 
   <div class="why-cards">
     <div class="why-card">
-      <h3>📢 Centralized Communication</h3>
-      <p>Verified institutional updates through a single platform.</p>
+      <h3>📢 Centralized Notices</h3>
+      <p>All official updates in one verified place.</p>
     </div>
-
     <div class="why-card">
       <h3>⚡ Real-Time Updates</h3>
-      <p>Instant notifications for academics, events, and deadlines.</p>
+      <p>No delays, no confusion.</p>
     </div>
-
     <div class="why-card">
-      <h3>🎓 Student-Centric Design</h3>
-      <p>Simple, accessible, department-friendly interface.</p>
+      <h3>📱 Mobile-First</h3>
+      <p>Designed for students on the go.</p>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- CORE TEAM SHORT -->
-<section class="fade" style="text-align:center">
-  <h2>Meet Our Core Team</h2>
+<section id="download" class="download">
+  <h2>Download the App</h2>
 
-  <p class="story" style="margin-bottom:20px">
-    Campus Connect is built by a dedicated student team working across
-    product strategy, development, and system architecture.
-  </p>
-
-  <a href="core-team.html" class="btn">View Full Core Team →</a>
-</section>
-
-<div class="divider"></div>
-
-<!-- DOWNLOAD -->
-<section id="download" class="download fade">
-  <h2>Download Campus Connect</h2>
-
-  <a class="btn"
+  <a class="btn pulse"
      href="https://raw.githubusercontent.com/leadcirclebkbirlanightcollege/campus-connect-download/main/apk/CampusConnect.apk">
-     ⬇ Get the App
+     ⬇ Get Campus Connect
   </a>
 
-  <p class="note">
-    * Please enable “Install from Unknown Sources” during installation
-  </p>
-
-  <p class="footer">
-    Powered by <span>LeadCircle</span>
-  </p>
+  <p class="note">* Enable “Install from Unknown Sources”</p>
 </section>
 
-<!-- STICKY CTA -->
-<a href="#download" class="sticky-cta">⬇ Get App</a>
+<footer class="site-footer">
+  <div class="footer-bottom">
+    © 2026 Campus Connect • Guided by Faculty
+  </div>
+</footer>
+
+<div class="mini-footer">
+  <span>Campus Connect</span>
+  <a href="#download">⬇ Download</a>
+</div>
 
 <script>
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  document.getElementById("progress-bar").style.width =
-    (scrollTop / height) * 100 + "%";
+window.addEventListener("scroll",()=>{
+  const h=document.documentElement;
+  document.getElementById("progress-bar").style.width=
+  (h.scrollTop/(h.scrollHeight-h.clientHeight))*100+"%";
 });
 </script>
 
-<footer class="site-footer">
-  <div class="footer-content">
-
-    <div class="footer-left">
-      <h3>Campus Connect</h3>
-      <p>
-        A student-driven digital platform designed to streamline
-        campus communication and engagement.
-      </p>
-    </div>
-
-    <div class="footer-center">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="core-team.html">Core Team</a></li>
-        <li><a href="index.html#download">Download App</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-right">
-      <h4>Institution</h4>
-      <p>
-        B. K. Birla Night College, Kalyan.<br>
-        
-      </p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>
-      © 2026 Campus Connect • Built by Core Team • Guided by Faculty
-    </p>
-  </div>
-</footer>
-  
 </body>
 </html>
-
-
-
