@@ -1,0 +1,36 @@
+.why-hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.why-hero h1 {
+  font-size: 42px;
+}
+
+.intro {
+  margin-top: 12px;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.why-content {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px 80px;
+}
+
+.block {
+  margin-bottom: 40px;
+}
+
+.block h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #1de9ff;
+}
+
+.block p {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
