@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #020c1b, #020c1b);
+  color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(0,0,0,0.4);
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar nav a {
+  color: #cfd8ff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.hero .badges {
+  margin-top: 12px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* FEATURES */
+.features {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.features h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  margin-bottom: 25px;
+}
+
+.feature h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.feature p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* DOWNLOAD */
+.download {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.download h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #00c6ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  opacity: 0.7;
+}
