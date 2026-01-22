@@ -1,165 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Why Campus Connect</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Base Styles -->
-  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/why.css">
 </head>
 
 <body>
 
-  <!-- Page Loader -->
 <div id="page-loader">
   <div class="loader-ring"></div>
   <p>Loading Campus Connect</p>
 </div>
 
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Campus Connect</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="why.html" class="active">Why</a>
+      <a href="core-team.html">Core Team</a>
+      <a href="index.html#download">Download</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">Campus Connect</div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="why.html" class="active">Why</a>
-        <a href="core-team.html">Core Team</a>
-        <a href="#download">Download</a>
-      </nav>
-    </div>
-  </header>
+<section class="why-hero">
+  <span class="founder-badge">Founder’s Note</span>
+  <h1>Why Campus Connect Exists</h1>
+  <p>
+    A real academic problem, approached with a structured digital solution.
+  </p>
+</section>
 
-  <!-- HERO -->
-  <section class="why-hero">
-    <span class="founder-badge">Founder’s Note</span>
-    <h1>Why Campus Connect Exists</h1>
-    <p class="hero-subtitle">
-      A first-hand account of a real institutional problem—and how a student-led initiative evolved into a structured digital solution.
+<section class="why-article">
+
+  <article>
+    <h2>The Problem</h2>
+    <p>
+      In our college, multiple two-credit certificate courses are conducted each academic
+      term. Attendance for these courses is recorded on hard-copy sheets and later manually
+      entered into Excel files.
     </p>
-  </section>
+    <p>
+      This process is time-consuming, error-prone, and requires repeated coordination,
+      making scalability and accuracy difficult as participation increases.
+    </p>
+  </article>
 
-  <!-- ARTICLE -->
-  <section class="why-article">
+  <article>
+    <h2>The Idea</h2>
+    <p>
+      The lack of a centralized digital system highlighted the need for a reliable platform
+      that could streamline attendance and academic coordination.
+    </p>
+  </article>
 
-    <article class="content-block">
-      <h2>1. The Problem</h2>
-      <p>
-        In our college, multiple two-credit certificate courses are conducted each academic term to enhance students’ academic and professional exposure.
-        While academically valuable, the operational execution of these courses remained heavily manual.
-      </p>
-      <p>
-        Attendance was recorded on physical hard-copy sheets and later transferred manually into Excel spreadsheets.
-        This process was time-consuming, error-prone, and required repeated coordination between students, coordinators, and departments.
-      </p>
-      <p>
-        As participation increased, maintaining accuracy, consistency, and timely access to records became increasingly challenging,
-        leading to administrative strain and information gaps.
-      </p>
-    </article>
+  <article>
+    <h2>The Build</h2>
+    <p>
+      Campus Connect was developed as a student-driven initiative focused on clarity,
+      accuracy, and institutional alignment.
+    </p>
+  </article>
 
-    <article class="content-block">
-      <h2>2. The Idea</h2>
-      <p>
-        Experiencing this workflow firsthand highlighted that the issue was not limited to attendance,
-        but rather the absence of a centralized and verified digital system.
-      </p>
-      <p>
-        The idea behind Campus Connect was to introduce a single platform that could streamline academic coordination,
-        beginning with certificate course attendance—reducing manual dependency while improving clarity and accountability.
-      </p>
-    </article>
+  <article>
+    <h2>The Launch</h2>
+    <p>
+      What began as a solution to attendance management evolved into a broader platform
+      aimed at improving campus communication and transparency.
+    </p>
+  </article>
 
-    <article class="content-block">
-      <h2>3. The Build</h2>
-      <p>
-        Campus Connect was designed as a student-driven, institution-aligned platform focused on simplicity, reliability, and scalability.
-      </p>
-      <p>
-        The system emphasizes centralized data access, structured workflows, and ease of use—ensuring that academic information
-        remains accurate, verifiable, and accessible to all stakeholders.
-      </p>
-    </article>
+</section>
 
-    <article class="content-block">
-      <h2>4. The Launch</h2>
-      <p>
-        What began as a solution to a specific operational challenge evolved into a broader initiative for improving campus communication.
-      </p>
-      <p>
-        Campus Connect represents a step towards modernizing institutional processes through technology,
-        while maintaining transparency, efficiency, and student-centric design.
-      </p>
-    </article>
-
-  </section>
-
-  <!-- FOUNDER SECTION -->
-  <section class="founder-section">
-    <div class="founder-card">
-      <img src="team/atharv.jpg" alt="Atharv Jadhav" />
-      <div class="founder-info">
-        <h3>Atharv Jadhav</h3>
-        <p class="role">Founder & Project Lead, Campus Connect</p>
-        <p class="quote">
-          “Campus Connect was built to solve a real problem—not as an application,
-          but as a dependable system that supports clarity, accountability, and growth.”
-        </p>
-      </div>
+<section class="founder-section">
+  <div class="founder-card">
+    <img src="/team/atharv.jpg" alt="Atharv Jadhav">
+    <div>
+      <strong>Atharv Jadhav</strong>
+      <span>Founder & Project Lead, Campus Connect</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Campus Connect • Guided by Faculty</p>
-  </footer>
+<footer class="site-footer">
+  © 2026 Campus Connect • Guided by Faculty
+</footer>
 
-<script>
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("page-loader");
-    setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 400); // smooth delay
-  });
-</script>
-
-  <script>
-  // Page load
-  window.addEventListener("load", () => {
-    document.body.classList.add("page-loaded");
-
-    const loader = document.getElementById("page-loader");
-    if (loader) {
-      setTimeout(() => loader.classList.add("hidden"), 300);
-    }
-  });
-
-  // Page transition on link click
-  document.querySelectorAll("a[href]").forEach(link => {
-    const url = link.getAttribute("href");
-
-    if (
-      url &&
-      !url.startsWith("#") &&
-      !url.startsWith("http") &&
-      !link.hasAttribute("target")
-    ) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.remove("page-loaded");
-        document.body.classList.add("page-exit");
-
-        setTimeout(() => {
-          window.location.href = url;
-        }, 350);
-      });
-    }
-  });
-</script>
-
+<script src="js/loader.js"></script>
 </body>
 </html>
-
-
-
