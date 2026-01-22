@@ -195,3 +195,54 @@ h2{ font-size:24px; margin-bottom:28px; text-align:center; }
   h1{font-size:30px}
   h2{font-size:22px}
 }
+
+/* ================= TEAM PAGE ================= */
+
+.team-grid{
+  margin-top:20px;
+}
+
+.team-card{
+  padding-top:40px;
+}
+
+/* TEAM PHOTO */
+.team-photo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:0 auto 14px;
+  display:block;
+  border:3px solid #00f5ff;
+}
+
+/* DEPARTMENT TAG */
+.dept-tag{
+  display:inline-block;
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(0,245,255,0.15);
+  color:#00f5ff;
+  margin:6px 0 10px;
+  font-weight:600;
+}
+
+/* FACULTY STRIP */
+.faculty-strip{
+  text-align:center;
+  padding:50px 20px;
+  margin-top:40px;
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+}
+
+.faculty-strip p{
+  font-size:14px;
+  opacity:0.85;
+  line-height:1.6;
+}
