@@ -7,7 +7,6 @@
 
   <!-- FAVICON -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,10 +15,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-<!-- SCROLL PROGRESS BAR -->
+<!-- PROGRESS BAR -->
 <div id="progress-bar"></div>
 
 <!-- NAVBAR -->
@@ -28,7 +26,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#why">Why</a></li>
-    <li><a href="#team">Core Team</a></li>
+    <li><a href="core-team.html">Core Team</a></li>
     <li><a href="#download">Download</a></li>
   </ul>
 </nav>
@@ -81,40 +79,16 @@
 
 <div class="divider"></div>
 
-<!-- CORE TEAM -->
-<section id="team" class="fade">
+<!-- CORE TEAM SHORT -->
+<section class="fade" style="text-align:center">
   <h2>Meet Our Core Team</h2>
 
-  <div class="cards">
+  <p class="story" style="margin-bottom:20px">
+    Campus Connect is built by a dedicated student team working across
+    product strategy, development, and system architecture.
+  </p>
 
-    <div class="card">
-      <h3>Atharv Jadhav</h3>
-      <p class="role">Project Lead & Product Strategist</p>
-      <p class="desc">
-        Leads project vision, feature planning, team coordination,
-        and ensures alignment with institutional requirements.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Pransu Mishra</h3>
-      <p class="role">Technical Architect & App Developer</p>
-      <p class="desc">
-        Responsible for application architecture, frontend development,
-        and performance optimization.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Aditya Pandey</h3>
-      <p class="role">Backend Systems & Data Management</p>
-      <p class="desc">
-        Manages backend logic, database structure, and secure
-        handling of application data.
-      </p>
-    </div>
-
-  </div>
+  <a href="core-team.html" class="btn">View Full Core Team →</a>
 </section>
 
 <div class="divider"></div>
@@ -138,12 +112,9 @@
 </section>
 
 <!-- STICKY CTA -->
-<a href="#download" class="sticky-cta">
-  ⬇ Get App
-</a>
+<a href="#download" class="sticky-cta">⬇ Get App</a>
 
 <script>
-/* SCROLL PROGRESS BAR */
 window.addEventListener("scroll", () => {
   const scrollTop = document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -152,42 +123,5 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
-<script>
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  const btn = document.createElement("button");
-  btn.innerText = "📲 Install Campus Connect";
-  btn.style.position = "fixed";
-  btn.style.bottom = "90px";
-  btn.style.right = "20px";
-  btn.style.padding = "14px 20px";
-  btn.style.borderRadius = "30px";
-  btn.style.border = "none";
-  btn.style.fontWeight = "700";
-  btn.style.background = "linear-gradient(135deg,#00f5ff,#0077ff)";
-  btn.style.color = "#020b1c";
-  btn.style.zIndex = "2000";
-  btn.style.cursor = "pointer";
-
-  document.body.appendChild(btn);
-
-  btn.addEventListener("click", async () => {
-    btn.remove();
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    deferredPrompt = null;
-  });
-});
-</script>
-
-  
 </body>
 </html>
-
-
-
-
