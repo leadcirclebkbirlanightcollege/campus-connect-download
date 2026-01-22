@@ -2,55 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Connect</title>
-  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/index.css" />
+
 </head>
 <body>
 
-<header class="navbar">
-  <div class="logo">Campus Connect</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="why.html">Why</a>
-    <a href="core-team.html">Core Team</a>
-    <a href="#download">Download</a>
-  </nav>
-</header>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Campus Connect</div>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="why.html">Why</a>
+        <a href="core-team.html">Core Team</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <h1>Campus Connect</h1>
-  <p>One trusted platform for official campus communication.</p>
-  <div class="badges">
-    ✓ Faculty Approved Initiative &nbsp;&nbsp; ✓ Student-Centric Design
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Campus Connect</h1>
+    <p class="subtitle">
+      One trusted platform for official campus communication.
+    </p>
+    <p class="badges">
+      ✓ Faculty Approved Initiative &nbsp; • &nbsp; 🎓 Student-Centric Design
+    </p>
+  </section>
 
-<section class="features">
-  <h2>Why Campus Connect?</h2>
-  <div class="feature">
-    <h3>📢 Centralized Notices</h3>
-    <p>All official updates in one verified place.</p>
-  </div>
-  <div class="feature">
-    <h3>⚡ Real-Time Updates</h3>
-    <p>No delays, no confusion.</p>
-  </div>
-  <div class="feature">
-    <h3>📱 Mobile-First</h3>
-    <p>Designed for students on the go.</p>
-  </div>
-</section>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      <h3>📢 Centralized Notices</h3>
+      <p>All official updates in one verified place.</p>
+    </div>
+    <div class="feature-card">
+      <h3>⚡ Real-Time Updates</h3>
+      <p>No delays, no confusion.</p>
+    </div>
+    <div class="feature-card">
+      <h3>📱 Mobile-First</h3>
+      <p>Designed for students on the go.</p>
+    </div>
+  </section>
 
-<section id="download" class="download">
-  <h2>Download the App</h2>
-  <a class="btn" href="#">⬇ Get Campus Connect</a>
-  <p class="note">* Enable “Install from Unknown Sources” during installation</p>
-</section>
+  <!-- DOWNLOAD -->
+  <section id="download" class="download">
+    <h2>Download the App</h2>
 
-<footer class="footer">
-  <p>© 2026 Campus Connect · Guided by Faculty</p>
-</footer>
+    <!-- ✅ WORKING DOWNLOAD BUTTON -->
+    <a class="download-btn"
+       href="https://raw.githubusercontent.com/leadcirclebkbirlanightcollege/campus-connect-download/main/apk/CampusConnect.apk"
+       download>
+       ⬇ Get Campus Connect
+    </a>
+
+    <p class="note">
+      * Enable “Install from Unknown Sources” during installation
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Campus Connect • Guided by Faculty</p>
+  </footer>
 
 </body>
 </html>
