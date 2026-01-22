@@ -210,3 +210,100 @@ h2{font-size:24px;margin-bottom:28px;text-align:center}
   .why-hero h1{font-size:28px}
   .why-article{font-size:15px}
 }
+
+/* ================= WHY PAGE – FOUNDER ARTICLE ================= */
+
+.why-hero{
+  padding:140px 20px 60px;
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+
+.why-badge{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:20px;
+  background:rgba(255,215,0,0.15);
+  color:#ffd700;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:16px;
+}
+
+.why-hero h1{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.why-subtitle{
+  font-size:16px;
+  opacity:.8;
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* ARTICLE */
+.why-article{
+  max-width:760px;
+  margin:40px auto 80px;
+  font-size:16px;
+  line-height:1.9;
+  opacity:.9;
+}
+
+.why-article p{
+  margin-bottom:26px;
+}
+
+/* AUTHOR BOX */
+.author-box{
+  margin-top:50px;
+  padding-top:30px;
+  display:flex;
+  gap:22px;
+  align-items:center;
+  border-top:1px solid rgba(255,255,255,0.12);
+}
+
+.author-avatar{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:28px;
+  background:linear-gradient(135deg,#00f5ff,#0077ff);
+  color:#020b1c;
+}
+
+.signature-svg{
+  width:160px;
+  margin-bottom:6px;
+  opacity:.9;
+}
+
+.author-right strong{
+  display:block;
+  font-size:16px;
+  margin-top:6px;
+}
+
+.author-right span{
+  display:block;
+  font-size:14px;
+  opacity:.7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .why-hero h1{font-size:28px}
+  .why-article{font-size:15px}
+
+  .author-box{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
