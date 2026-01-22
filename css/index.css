@@ -1,6 +1,7 @@
+/* ================= HERO ================= */
 .hero{
   text-align:center;
-  padding-top:110px;
+  padding:120px 20px 60px;
   position:relative;
 }
 
@@ -12,12 +13,20 @@
   z-index:-1;
 }
 
-.logo{width:90px;margin-bottom:14px}
+.logo{
+  width:90px;
+  margin-bottom:14px;
+}
 
 .hero-tagline{
   font-size:16px;
   opacity:.85;
-  margin:10px auto 20px;
+  margin:10px auto 18px;
+}
+
+/* ================= APPROVAL BADGES ================= */
+.approval{
+  margin-bottom:30px;
 }
 
 .approval span{
@@ -31,25 +40,32 @@
   font-weight:600;
 }
 
+/* ================= DIVIDER (FORCED FIX) ================= */
 .divider{
   height:1px;
-  width:60%;
-  margin:12px auto;
+  width:70%;
+  margin:40px auto 40px;
   background:linear-gradient(90deg,transparent,#00f5ff,transparent);
-  opacity:.3;
+  opacity:.35;
+}
+
+/* ================= WHY SECTION ================= */
+#why{
+  padding:60px 20px 60px;
 }
 
 .why-cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:24px;
+  margin-top:20px;
 }
 
 .why-card{
   background:rgba(255,255,255,.06);
-  padding:24px;
+  padding:26px;
   border-radius:20px;
-  transition:.25s;
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
 .why-card:hover{
@@ -57,32 +73,67 @@
   box-shadow:0 0 18px rgba(0,245,255,.25);
 }
 
-.download{text-align:center}
-
-.pulse{
-  animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-  0%,100%{box-shadow:0 0 0 rgba(0,245,255,.4)}
-  50%{box-shadow:0 0 20px rgba(0,245,255,.5)}
-}
-
-/* FIX DOWNLOAD SECTION SPACING */
+/* ================= DOWNLOAD (HARD FIX) ================= */
 #download{
-  padding:60px 20px 80px;   /* compact spacing */
+  padding:60px 20px 60px !important;
+  margin:0 auto !important;
   text-align:center;
+  min-height:auto !important;
 }
 
 #download h2{
-  margin-bottom:20px;
+  margin-bottom:18px !important;
 }
 
 #download .btn{
-  margin:12px 0 8px;
+  margin:12px auto 6px !important;
+  display:inline-block;
 }
 
-.note{
+#download .note{
+  margin-top:6px !important;
   font-size:12px;
   opacity:.7;
+}
+
+/* REMOVE EXTRA SPACE ABOVE DOWNLOAD */
+#download::before,
+#download::after{
+  content:none !important;
+}
+
+/* ================= FOOTER FIX ================= */
+.site-footer{
+  margin-top:40px !important;
+  padding-top:30px !important;
+}
+
+.footer-bottom{
+  padding:20px 0 10px;
+}
+
+/* ================= MINI FOOTER SAFE ================= */
+.mini-footer{
+  display:none;
+}
+
+@media(max-width:768px){
+  .mini-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:12px 16px;
+    background:rgba(2,11,28,0.96);
+    backdrop-filter:blur(10px);
+    border-top:1px solid rgba(255,255,255,0.08);
+    z-index:3000;
+  }
+
+  body{
+    padding-bottom:64px;
+  }
 }
