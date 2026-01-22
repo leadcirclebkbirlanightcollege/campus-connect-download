@@ -1,0 +1,84 @@
+/* ===== GLOBAL BASE ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:linear-gradient(180deg,#071a3a,#020b1c);
+  color:#ffffff;
+  line-height:1.6;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:14px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(2,11,28,0.9);
+  backdrop-filter:blur(10px);
+  z-index:2000;
+}
+
+.nav-logo{
+  font-weight:700;
+  font-size:15px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:18px;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  opacity:.85;
+}
+.nav-links a:hover{ opacity:1; }
+
+/* ===== SECTIONS ===== */
+section{
+  padding:80px 20px 60px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===== TEXT ===== */
+h1{font-size:34px}
+h2{font-size:24px;margin-bottom:28px;text-align:center}
+
+.story{
+  max-width:720px;
+  margin:10px auto;
+  font-size:15px;
+  opacity:.85;
+  text-align:center;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+  display:inline-block;
+  padding:14px 32px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#00f5ff,#0077ff);
+  color:#020b1c;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  h1{font-size:30px}
+  h2{font-size:22px}
+}

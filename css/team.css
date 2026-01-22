@@ -1,0 +1,97 @@
+/* ===== TEAM HEADINGS ===== */
+.team-heading{
+  text-align:center;
+  margin:20px 0 30px;
+  font-size:24px;
+  font-weight:700;
+}
+.team-heading.muted{opacity:.8}
+
+/* ===== GRID ===== */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+  justify-content:center;
+}
+
+/* ===== CARD ===== */
+.team-card{
+  background:rgba(255,255,255,0.06);
+  border-radius:22px;
+  padding:34px 24px 28px;
+  text-align:center;
+  position:relative;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.team-card:hover{
+  transform:translateY(-6px);
+}
+
+/* ===== PHOTO ===== */
+.team-photo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #00f5ff;
+  margin-bottom:14px;
+}
+
+/* ===== TAGS ===== */
+.dept-tag{
+  display:inline-block;
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(0,245,255,0.15);
+  color:#00f5ff;
+  margin-bottom:10px;
+}
+
+.role{
+  color:#00f5ff;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.desc{
+  font-size:13px;
+  opacity:.85;
+}
+
+/* ===== FOUNDING BADGE ===== */
+.founder-badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  padding:6px 12px;
+  font-size:11px;
+  font-weight:700;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ffd700,#ff9f00);
+  color:#1a1200;
+}
+
+/* ===== FOUNDERS GLOW ===== */
+.team-card.founding{
+  border:1px solid rgba(255,215,0,0.45);
+  box-shadow:
+    0 0 14px rgba(255,215,0,0.22),
+    0 0 28px rgba(255,215,0,0.16);
+}
+
+.team-card.founding:hover{
+  box-shadow:
+    0 0 22px rgba(255,215,0,0.45),
+    0 0 46px rgba(255,215,0,0.28);
+}
+
+/* ===== FACULTY STRIP ===== */
+.faculty-strip{
+  text-align:center;
+  padding:50px 20px;
+  background:rgba(255,255,255,0.04);
+  margin-top:50px;
+}
