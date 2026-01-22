@@ -1,0 +1,57 @@
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.tagline {
+  margin-top: 12px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.trust {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #9feaff;
+}
+
+.why {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 24px;
+  border-radius: 16px;
+  width: 260px;
+}
+
+.download {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 14px 32px;
+  background: #1de9ff;
+  color: #000;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.7;
+}
