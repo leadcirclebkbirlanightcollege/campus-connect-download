@@ -251,3 +251,69 @@ h1,h2{
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   }
 }
+
+/* ================= FOUNDER SPOTLIGHT ANIMATION ================= */
+
+/* Base highlight */
+.team-card.founding{
+  border:1px solid rgba(255,215,0,0.4);
+  box-shadow:
+    0 0 18px rgba(255,215,0,0.25),
+    inset 0 0 12px rgba(255,215,0,0.15);
+  animation: founderPulse 3.5s ease-in-out infinite;
+}
+
+/* Glow pulse */
+@keyframes founderPulse{
+  0%{
+    transform:scale(1);
+    box-shadow:
+      0 0 18px rgba(255,215,0,0.25),
+      inset 0 0 12px rgba(255,215,0,0.15);
+  }
+  50%{
+    transform:scale(1.015);
+    box-shadow:
+      0 0 32px rgba(255,215,0,0.45),
+      inset 0 0 20px rgba(255,215,0,0.25);
+  }
+  100%{
+    transform:scale(1);
+    box-shadow:
+      0 0 18px rgba(255,215,0,0.25),
+      inset 0 0 12px rgba(255,215,0,0.15);
+  }
+}
+
+/* Spotlight sweep */
+.team-card.founding::after{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.15) 45%,
+    transparent 60%
+  );
+  animation: spotlightMove 4.5s linear infinite;
+  pointer-events:none;
+}
+
+@keyframes spotlightMove{
+  0%{
+    transform:translateX(-60%);
+  }
+  100%{
+    transform:translateX(60%);
+  }
+}
+
+/* Pause animation on hover (professional feel) */
+.team-card.founding:hover{
+  animation-play-state:paused;
+}
+
+.team-card.founding:hover::after{
+  animation-play-state:paused;
+}
