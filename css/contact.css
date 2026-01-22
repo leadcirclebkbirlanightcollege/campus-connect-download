@@ -1,0 +1,44 @@
+.contact-hero {
+  text-align: center;
+  padding: 110px 20px 60px;
+}
+
+.contact-hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.contact-hero p {
+  margin-top: 12px;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.contact-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px 100px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+  padding: 28px;
+  width: 360px;
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #1de9ff;
+}
+
+.contact-card p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
