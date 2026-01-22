@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Core Team | Campus Connect</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/core-team.css" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/core-team.css">
 </head>
 
-<body class="core-page">
+<body>
 
-  <!-- Page Loader -->
 <div id="page-loader">
   <div class="loader-ring"></div>
   <p>Loading Campus Connect</p>
 </div>
-
 
 <header class="navbar">
   <div class="nav-container">
@@ -31,125 +29,39 @@
 </header>
 
 <main class="core-wrapper">
+  <h1>Core Team</h1>
+  <p>The students behind Campus Connect</p>
 
-  <h1 class="core-title">Core Team</h1>
-  <p class="core-subtitle">The students behind Campus Connect</p>
-
-  <!-- FOUNDERS -->
-  <section class="team-grid founders">
-    <div class="team-card founder">
-      <span class="badge">⭐ Founding Team</span>
-      <img src="/team/atharv.jpg" alt="Atharv Jadhav">
+  <section class="team-grid">
+    <div class="team-card">
+      <img src="/team/atharv.jpg">
       <h3>Atharv Jadhav</h3>
-      <p class="dept">Computer Science</p>
-      <h4>Project Lead</h4>
-      <p class="desc">
-        Leads vision, roadmap planning, coordination, and alignment with institutional goals.
-      </p>
+      <p>Project Lead</p>
     </div>
 
-    <div class="team-card founder">
-      <span class="badge">⭐ Founding Team</span>
-      <img src="/team/pransu.jpg" alt="Pransu Mishra">
+    <div class="team-card">
+      <img src="/team/pransu.jpg">
       <h3>Pransu Mishra</h3>
-      <p class="dept">Computer Science</p>
-      <h4>Technical Architect & App Developer</h4>
-      <p class="desc">
-        Designs system architecture, frontend structure, and ensures performance stability.
-      </p>
+      <p>Technical Lead</p>
     </div>
 
-    <div class="team-card founder">
-      <span class="badge">⭐ Founding Team</span>
-      <img src="/team/aditya.jpg" alt="Aditya Pandey">
+    <div class="team-card">
+      <img src="/team/aditya.jpg">
       <h3>Aditya Pandey</h3>
-      <p class="dept">Commerce</p>
-      <h4>Backend Systems & Data</h4>
-      <p class="desc">
-        Handles backend logic, databases, and secure data workflows.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTRIBUTORS -->
-  <h2 class="section-title">Core Contributors</h2>
-
-  <section class="team-grid contributors">
-    <div class="team-card">
-      <img src="/team/aditya-mishra.jpg" alt="Aditya Mishra">
-      <h3>Aditya Mishra</h3>
-      <p class="dept">Computer Science</p>
-      <h4>Operations & Deployment</h4>
-      <p class="desc">
-        Manages deployments, testing cycles, and release stability.
-      </p>
-    </div>
-
-    <div class="team-card">
-      <img src="/team/avadhut.jpg" alt="Avadhut Kashid">
-      <h3>Avadhut Kashid</h3>
-      <p class="dept">Computer Science</p>
-      <h4>User Experience</h4>
-      <p class="desc">
-        Focuses on UI consistency, accessibility, and visual design.
-      </p>
+      <p>Backend Systems</p>
     </div>
   </section>
 
   <section class="faculty-strip">
     <h3>Advised by Faculty</h3>
-    <p>Department of Computer Science & Department of Commerce</p>
-    <p>B. K. Birla Night College, Kalyan</p>
+    <p>Department of Computer Science & Commerce</p>
   </section>
-
 </main>
 
 <footer class="site-footer">
-  © 2026 Campus Connect • Built by Core Team • Guided by Faculty
+  © 2026 Campus Connect • Built by Core Team
 </footer>
 
-  <script>
-  window.addEventListener("load", () => {
-    const loader = document.getElementById("page-loader");
-    setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 400); // smooth delay
-  });
-</script>
-
-<script>
-  // Page load
-  window.addEventListener("load", () => {
-    document.body.classList.add("page-loaded");
-
-    const loader = document.getElementById("page-loader");
-    if (loader) {
-      setTimeout(() => loader.classList.add("hidden"), 300);
-    }
-  });
-
-  // Page transition on link click
-  document.querySelectorAll("a[href]").forEach(link => {
-    const url = link.getAttribute("href");
-
-    if (
-      url &&
-      !url.startsWith("#") &&
-      !url.startsWith("http") &&
-      !link.hasAttribute("target")
-    ) {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        document.body.classList.remove("page-loaded");
-        document.body.classList.add("page-exit");
-
-        setTimeout(() => {
-          window.location.href = url;
-        }, 350);
-      });
-    }
-  });
-</script>
-
+<script src="js/loader.js"></script>
 </body>
 </html>
