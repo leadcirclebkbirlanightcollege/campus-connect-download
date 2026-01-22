@@ -82,3 +82,68 @@ h2{font-size:24px;margin-bottom:28px;text-align:center}
   h1{font-size:30px}
   h2{font-size:22px}
 }
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  margin-top:80px;
+  background:rgba(255,255,255,0.04);
+  padding:50px 20px 20px;
+}
+
+.footer-content{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.site-footer h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.site-footer h4{
+  font-size:14px;
+  margin-bottom:10px;
+  opacity:.9;
+}
+
+.site-footer p{
+  font-size:13px;
+  opacity:.75;
+  line-height:1.6;
+}
+
+.footer-center ul{
+  list-style:none;
+}
+
+.footer-center li{
+  margin-bottom:8px;
+}
+
+.footer-center a{
+  text-decoration:none;
+  color:#ffffff;
+  font-size:13px;
+  opacity:.8;
+}
+
+.footer-center a:hover{
+  opacity:1;
+  color:#00f5ff;
+}
+
+.footer-bottom{
+  margin-top:30px;
+  padding-top:15px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  text-align:center;
+}
+
+.footer-bottom p{
+  font-size:12px;
+  opacity:.6;
+}
