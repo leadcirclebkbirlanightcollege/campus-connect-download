@@ -1,328 +1,130 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Team | Campus Connect</title>
 
-html{ scroll-behavior:smooth; }
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-body{
-  background:linear-gradient(180deg,#071a3a,#020b1c);
-  color:#fff;
-  line-height:1.6;
-}
+<body>
 
-/* PROGRESS BAR */
-#progress-bar{
-  position:fixed;
-  top:0;
-  left:0;
-  height:3px;
-  background:linear-gradient(90deg,#00f5ff,#0077ff);
-  width:0;
-  z-index:2000;
-}
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">Campus Connect</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="core-team.html">Core Team</a></li>
+    <li><a href="index.html#download">Download</a></li>
+  </ul>
+</nav>
 
-/* NAVBAR */
-.navbar{
-  position:fixed;
-  top:3px;
-  width:100%;
-  padding:14px 28px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(2,11,28,.9);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
+<!-- HEADER -->
+<section class="fade" style="padding-top:110px;text-align:center">
+  <h1>Core Team</h1>
+  <p class="story">
+    The student team responsible for planning, development, execution,
+    and long-term scalability of Campus Connect.
+  </p>
+</section>
 
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:18px;
-}
+<!-- TEAM GRID -->
+<section class="fade">
+  <div class="cards team-grid">
 
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-size:13px;
-  opacity:.85;
-}
+    <!-- ================= FOUNDING TEAM ================= -->
 
-.nav-links a:hover{ opacity:1; }
+    <!-- MEMBER 1 -->
+    <div class="card team-card founding">
+      <span class="founder-badge">Founding Team</span>
 
-/* SECTIONS */
-section{
-  padding:80px 20px 60px;
-  max-width:1100px;
-  margin:auto;
-}
+      <img src="team/atharv.jpg" class="team-photo">
+      <h3>Atharv Jadhav</h3>
+      <span class="dept-tag">Computer Science</span>
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding-top:90px;
-  position:relative;
-}
+      <p class="role">Project Lead & Product Strategist</p>
+      <p class="desc">
+        Leads project vision, roadmap planning, stakeholder coordination,
+        and ensures alignment with institutional objectives.
+      </p>
+    </div>
 
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle,#0b3a7a,transparent 65%);
-  opacity:.25;
-  z-index:-1;
-}
+    <!-- MEMBER 2 -->
+    <div class="card team-card founding">
+      <span class="founder-badge">Founding Team</span>
 
-.logo{ width:90px; margin-bottom:12px; }
+      <img src="team/pransu.jpg" class="team-photo">
+      <h3>Pransu Mishra</h3>
+      <span class="dept-tag">Computer Science</span>
 
-h1{ font-size:34px; }
-h2{ font-size:24px; margin-bottom:28px; text-align:center; }
+      <p class="role">Technical Architect & App Developer</p>
+      <p class="desc">
+        Designs application architecture, manages frontend development,
+        and ensures performance and system stability.
+      </p>
+    </div>
 
-.story{
-  max-width:720px;
-  margin:10px auto;
-  font-size:15px;
-  opacity:.85;
-}
+    <!-- MEMBER 3 -->
+    <div class="card team-card founding">
+      <span class="founder-badge">Founding Team</span>
 
-/* BADGE */
-.approval span{
-  display:inline-block;
-  margin:10px 0;
-  padding:8px 18px;
-  border-radius:20px;
-  background:rgba(0,245,255,.15);
-  color:#00f5ff;
-  font-size:13px;
-  font-weight:600;
-}
+      <img src="team/aditya.jpg" class="team-photo">
+      <h3>Aditya Pandey</h3>
+      <span class="dept-tag">Commerce</span>
 
-/* COLLEGE STRIP */
-.college-strip img{
-  max-width:120px;
-  margin:6px auto;
-  display:block;
-}
+      <p class="role">Backend Systems & Data Management</p>
+      <p class="desc">
+        Handles backend logic, database structuring,
+        and secure data handling across the platform.
+      </p>
+    </div>
 
-.college-strip p{
-  font-size:13px;
-  opacity:.75;
-}
+    <!-- ================= CORE CONTRIBUTORS ================= -->
 
-/* DIVIDER */
-.divider{
-  height:1px;
-  width:60%;
-  margin:10px auto;
-  background:linear-gradient(90deg,transparent,#00f5ff,transparent);
-  opacity:.3;
-}
+    <!-- MEMBER 4 -->
+    <div class="card team-card">
+      <img src="team/aditya-mishra.jpg" class="team-photo">
+      <h3>Aditya Mishra</h3>
+      <span class="dept-tag">Computer Science</span>
 
-/* CARDS */
-.why-cards,
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-}
+      <p class="role">Operations & Deployment</p>
+      <p class="desc">
+        Manages deployment workflows, testing cycles,
+        version releases, and overall system reliability.
+      </p>
+    </div>
 
-.card,
-.why-card{
-  background:rgba(255,255,255,.06);
-  border-radius:18px;
-  padding:22px;
-  text-align:center;
-}
+    <!-- MEMBER 5 -->
+    <div class="card team-card">
+      <img src="team/avadhut.jpg" class="team-photo">
+      <h3>Avadhut Kashid</h3>
+      <span class="dept-tag">Computer Science</span>
 
-.role{
-  color:#00f5ff;
-  font-weight:600;
-  margin:8px 0;
-}
+      <p class="role">User Experience</p>
+      <p class="desc">
+        Focuses on UI consistency, user experience,
+        accessibility standards, and visual branding.
+      </p>
+    </div>
 
-.desc{
-  font-size:13px;
-  opacity:.85;
-}
+  </div>
+</section>
 
-/* DOWNLOAD */
-.download{text-align:center;}
+<!-- FACULTY STRIP -->
+<section class="faculty-strip fade">
+  <p>
+    <strong>Advised by Faculty</strong><br>
+    Department of Computer Science & Department of Commerce<br>
+    B. K. Birla Night College, Kalyan.
+  </p>
+</section>
 
-.btn{
-  display:inline-block;
-  margin-top:16px;
-  padding:14px 32px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#00f5ff,#0077ff);
-  color:#020b1c;
-  font-weight:700;
-  text-decoration:none;
-}
+<section class="fade" style="text-align:center">
+  <a href="index.html" class="btn">← Back to Home</a>
+</section>
 
-/* STICKY CTA */
-.sticky-cta{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:linear-gradient(135deg,#00f5ff,#0077ff);
-  color:#020b1c;
-  padding:14px 22px;
-  border-radius:30px;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-  z-index:1500;
-}
-
-/* FOOTER */
-.note{font-size:11px; opacity:.7; margin-top:8px;}
-.footer{margin-top:24px; font-size:11px; opacity:.6;}
-.footer span{color:#00f5ff;}
-
-/* FADE */
-.fade{
-  animation:fadeIn .8s ease both;
-}
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(14px)}
-  to{opacity:1; transform:translateY(0)}
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  h1{font-size:30px}
-  h2{font-size:22px}
-}
-
-/* ================= TEAM PAGE ================= */
-
-.team-grid{
-  margin-top:20px;
-}
-
-.team-card{
-  padding-top:40px;
-}
-
-/* TEAM PHOTO */
-.team-photo{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  object-fit:cover;
-  margin:0 auto 14px;
-  display:block;
-  border:3px solid #00f5ff;
-}
-
-/* DEPARTMENT TAG */
-.dept-tag{
-  display:inline-block;
-  padding:6px 14px;
-  font-size:12px;
-  border-radius:20px;
-  background:rgba(0,245,255,0.15);
-  color:#00f5ff;
-  margin:6px 0 10px;
-  font-weight:600;
-}
-
-/* FACULTY STRIP */
-.faculty-strip{
-  text-align:center;
-  padding:50px 20px;
-  margin-top:40px;
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,0.04),
-    rgba(255,255,255,0.01)
-  );
-}
-
-.faculty-strip p{
-  font-size:14px;
-  opacity:0.85;
-  line-height:1.6;
-}
-
-/* ================= CORE TEAM GRID FIX ================= */
-
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  gap:28px;
-  justify-items:center;          /* 👈 card center */
-}
-
-/* Force equal card width */
-.team-card{
-  width:100%;
-  max-width:320px;               /* 👈 keeps symmetry */
-}
-
-/* Center grid when row is incomplete */
-@media (min-width: 900px){
-  .team-grid{
-    justify-content:center;      /* 👈 KEY FIX */
-  }
-}
-
-/* ===== CORE TEAM PERFECT GRID FIX ===== */
-
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:30px;
-  justify-content:center;
-}
-
-/* Card sizing */
-.team-card{
-  max-width:340px;
-  margin:0 auto;
-}
-
-/* 2nd row center alignment */
-@media (min-width: 900px){
-  .team-grid > .team-card:nth-last-child(1),
-  .team-grid > .team-card:nth-last-child(2){
-    grid-column: span 1;
-  }
-
-  .team-grid{
-    place-items:center;
-  }
-}
-
-/* Responsive */
-@media (max-width: 900px){
-  .team-grid{
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  }
-}
-
-/* ===== FOUNDING TEAM BADGE ===== */
-
-.team-card{
-  position:relative;
-}
-
-.founder-badge{
-  position:absolute;
-  top:16px;
-  right:16px;
-  padding:6px 12px;
-  font-size:11px;
-  font-weight:700;
-  border-radius:14px;
-  background:linear-gradient(135deg,#ffd700,#ff9f00);
-  color:#1a1200;
-  box-shadow:0 0 14px rgba(255,215,0,0.35);
-}
-
-/* Optional subtle glow for founders */
-.team-card.founding{
-  border:1px solid rgba(255,215,0,0.35);
-}
+</body>
+</html>
