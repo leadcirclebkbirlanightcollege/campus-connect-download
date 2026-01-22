@@ -19,17 +19,17 @@
 <nav class="navbar">
   <div class="nav-logo">Campus Connect</div>
   <ul class="nav-links">
-    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#why">Why</a></li>
     <li><a href="core-team.html">Core Team</a></li>
     <li><a href="#download">Download</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="about" class="hero">
   <div class="hero-bg"></div>
-
-  <img src="logo.png" class="logo">
+  <img src="logo.png" class="logo" alt="Campus Connect Logo">
   <h1>Campus Connect</h1>
   <p class="hero-tagline">
     One trusted platform for official campus communication.
@@ -43,6 +43,7 @@
 
 <div class="divider"></div>
 
+<!-- WHY -->
 <section id="why">
   <h2>Why Campus Connect?</h2>
 
@@ -64,23 +65,28 @@
 
 <div class="divider"></div>
 
-<section id="download" class="download">
+<!-- DOWNLOAD (FIXED) -->
+<section id="download">
   <h2>Download the App</h2>
 
-  <a class="btn pulse"
+  <a class="btn"
      href="https://raw.githubusercontent.com/leadcirclebkbirlanightcollege/campus-connect-download/main/apk/CampusConnect.apk">
      ⬇ Get Campus Connect
   </a>
 
-  <p class="note">* Enable “Install from Unknown Sources”</p>
+  <p class="note">
+    * Enable “Install from Unknown Sources” during installation
+  </p>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-bottom">
     © 2026 Campus Connect • Guided by Faculty
   </div>
 </footer>
 
+<!-- MOBILE MINI FOOTER -->
 <div class="mini-footer">
   <span>Campus Connect</span>
   <a href="#download">⬇ Download</a>
@@ -89,8 +95,8 @@
 <script>
 window.addEventListener("scroll",()=>{
   const h=document.documentElement;
-  document.getElementById("progress-bar").style.width=
-  (h.scrollTop/(h.scrollHeight-h.clientHeight))*100+"%";
+  document.getElementById("progress-bar").style.width =
+    (h.scrollTop/(h.scrollHeight-h.clientHeight))*100 + "%";
 });
 </script>
 
