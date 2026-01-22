@@ -1,30 +1,90 @@
-// Page load
-window.addEventListener("load", () => {
-  document.body.classList.add("page-loaded");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect</title>
 
-  const loader = document.getElementById("page-loader");
-  if (loader) {
-    setTimeout(() => loader.classList.add("hidden"), 300);
-  }
-});
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/index.css" />
 
-// Smooth page transition
-document.querySelectorAll("a[href]").forEach(link => {
-  const url = link.getAttribute("href");
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
 
-  if (
-    url &&
-    !url.startsWith("#") &&
-    !url.startsWith("http") &&
-    !link.hasAttribute("target")
-  ) {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      document.body.classList.remove("page-loaded");
+<body>
 
-      setTimeout(() => {
-        window.location.href = url;
-      }, 300);
-    });
-  }
-});
+<!-- 🔵 PAGE LOADER -->
+<div id="page-loader">
+  <div class="loader-logo">C</div>
+</div>
+
+<!-- 🔵 NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">Campus Connect</div>
+  <nav class="nav-right">
+    <a href="index.html" class="active">Home</a>
+    <a href="why.html">Why</a>
+    <a href="core-team.html">Core Team</a>
+    <a href="#download">Download</a>
+  </nav>
+</header>
+
+<!-- 🔵 HERO -->
+<section class="hero">
+  <h1>Campus Connect</h1>
+  <p class="hero-sub">
+    One trusted platform for official campus communication.
+  </p>
+  <div class="hero-badges">
+    <span>✔ Faculty Approved Initiative</span>
+    <span>🎓 Student-Centric Design</span>
+  </div>
+</section>
+
+<!-- 🔵 WHY SECTION -->
+<section class="why-section">
+  <h2>Why Campus Connect?</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <h3>📢 Centralized Notices</h3>
+      <p>All official updates in one verified place.</p>
+    </div>
+
+    <div class="why-card">
+      <h3>⚡ Real-Time Updates</h3>
+      <p>No delays, no confusion.</p>
+    </div>
+
+    <div class="why-card">
+      <h3>📱 Mobile-First</h3>
+      <p>Designed for students on the go.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 🔵 DOWNLOAD -->
+<section class="download-section" id="download">
+  <h2>Download the App</h2>
+
+  <a class="download-btn" href="CampusConnect.apk">
+    ⬇ Get Campus Connect
+  </a>
+
+  <p class="download-note">
+    * Enable “Install from Unknown Sources” during installation
+  </p>
+</section>
+
+<!-- 🔵 FOOTER -->
+<footer class="footer">
+  <p>© 2026 Campus Connect • Guided by Faculty</p>
+</footer>
+
+<!-- 🔵 JS (IMPORTANT: JS ONLY HERE) -->
+<script src="js/loader.js"></script>
+
+</body>
+</html>
