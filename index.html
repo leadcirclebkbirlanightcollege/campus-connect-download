@@ -1,107 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Connect</title>
 
-  <link rel="icon" href="/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/index.css" />
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/index.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
 </head>
 
-<body>
+<body class="index-page">
 
-<div id="progress-bar"></div>
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Campus Connect</div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="why.html">Why</a>
+        <a href="core-team.html">Core Team</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
 
-<nav class="navbar">
-  <div class="nav-logo">Campus Connect</div>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h1>Campus Connect</h1>
+    <p>
+      One trusted platform for official campus communication.
+    </p>
+    <p>
+      ✓ Faculty Approved Initiative &nbsp;&nbsp;•&nbsp;&nbsp; 🎓 Student-Centric Design
+    </p>
+  </section>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="why.html">Why</a></li>
-    <li><a href="core-team.html">Core Team</a></li>
-    <li><a href="index.html#download">Download</a></li>
-  </ul>
-</nav>
-
-
-<!-- HERO -->
-<section id="about" class="hero">
-  <div class="hero-bg"></div>
-  <img src="logo.png" class="logo" alt="Campus Connect Logo">
-  <h1>Campus Connect</h1>
-  <p class="hero-tagline">
-    One trusted platform for official campus communication.
-  </p>
-
-  <div class="approval">
-    <span>✔ Faculty Approved Initiative</span>
-    <span>🎓 Student-Centric Design</span>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- WHY -->
-<section id="why">
-  <h2>Why Campus Connect?</h2>
-
-  <div class="why-cards">
-    <div class="why-card">
+  <!-- ================= WHY CARDS ================= -->
+  <section class="features">
+    <div class="feature-card">
       <h3>📢 Centralized Notices</h3>
       <p>All official updates in one verified place.</p>
     </div>
-    <div class="why-card">
+
+    <div class="feature-card">
       <h3>⚡ Real-Time Updates</h3>
       <p>No delays, no confusion.</p>
     </div>
-    <div class="why-card">
+
+    <div class="feature-card">
       <h3>📱 Mobile-First</h3>
       <p>Designed for students on the go.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="divider"></div>
+  <!-- ================= DOWNLOAD ================= -->
+  <section class="download-section" id="download">
+    <h2>Download the App</h2>
 
-<!-- DOWNLOAD (FIXED) -->
-<section id="download">
-  <h2>Download the App</h2>
+    <a href="/CampusConnect.apk" class="download-btn">
+      ⬇ Get Campus Connect
+    </a>
 
-  <a class="btn"
-     href="https://raw.githubusercontent.com/leadcirclebkbirlanightcollege/campus-connect-download/main/apk/CampusConnect.apk">
-     ⬇ Get Campus Connect
-  </a>
+    <div class="download-note">
+      * Enable “Install from Unknown Sources” during installation
+    </div>
+  </section>
 
-  <p class="note">
-    * Enable “Install from Unknown Sources” during installation
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-bottom">
+  <!-- ================= FOOTER ================= -->
+  <footer class="index-footer">
     © 2026 Campus Connect • Guided by Faculty
-  </div>
-</footer>
-
-<!-- MOBILE MINI FOOTER -->
-<div class="mini-footer">
-  <span>Campus Connect</span>
-  <a href="#download">⬇ Download</a>
-</div>
-
-<script>
-window.addEventListener("scroll",()=>{
-  const h=document.documentElement;
-  document.getElementById("progress-bar").style.width =
-    (h.scrollTop/(h.scrollHeight-h.clientHeight))*100 + "%";
-});
-</script>
+  </footer>
 
 </body>
 </html>
-
