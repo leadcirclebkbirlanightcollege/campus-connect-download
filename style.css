@@ -1,130 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Core Team | Campus Connect</title>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
 
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+body{
+  background:linear-gradient(180deg,#071a3a,#020b1c);
+  color:#ffffff;
+}
 
-<body>
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:14px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(2,11,28,0.9);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-logo">Campus Connect</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="core-team.html">Core Team</a></li>
-    <li><a href="index.html#download">Download</a></li>
-  </ul>
-</nav>
+.nav-logo{
+  font-weight:700;
+  font-size:15px;
+}
 
-<!-- HEADER -->
-<section class="fade" style="padding-top:110px;text-align:center">
-  <h1>Core Team</h1>
-  <p class="story">
-    The student team responsible for planning, development, execution,
-    and long-term scalability of Campus Connect.
-  </p>
-</section>
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
 
-<!-- TEAM GRID -->
-<section class="fade">
-  <div class="cards team-grid">
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  opacity:.85;
+}
 
-    <!-- ================= FOUNDING TEAM ================= -->
+/* SECTIONS */
+section{
+  padding:90px 20px 70px;
+  max-width:1200px;
+  margin:auto;
+}
 
-    <!-- MEMBER 1 -->
-    <div class="card team-card founding">
-      <span class="founder-badge">Founding Team</span>
+/* HEADINGS */
+h1,h2{
+  text-align:center;
+  margin-bottom:10px;
+}
 
-      <img src="team/atharv.jpg" class="team-photo">
-      <h3>Atharv Jadhav</h3>
-      <span class="dept-tag">Computer Science</span>
+.story{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto;
+  opacity:.85;
+  font-size:15px;
+}
 
-      <p class="role">Project Lead & Product Strategist</p>
-      <p class="desc">
-        Leads project vision, roadmap planning, stakeholder coordination,
-        and ensures alignment with institutional objectives.
-      </p>
-    </div>
+/* GRID */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  justify-content:center;
+}
 
-    <!-- MEMBER 2 -->
-    <div class="card team-card founding">
-      <span class="founder-badge">Founding Team</span>
+/* CARD */
+.team-card{
+  background:rgba(255,255,255,0.06);
+  border-radius:22px;
+  padding:34px 24px 28px;
+  text-align:center;
+  position:relative;
+}
 
-      <img src="team/pransu.jpg" class="team-photo">
-      <h3>Pransu Mishra</h3>
-      <span class="dept-tag">Computer Science</span>
+/* PHOTO */
+.team-photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #00f5ff;
+  margin-bottom:14px;
+}
 
-      <p class="role">Technical Architect & App Developer</p>
-      <p class="desc">
-        Designs application architecture, manages frontend development,
-        and ensures performance and system stability.
-      </p>
-    </div>
+/* NAME */
+.team-card h3{
+  margin-bottom:6px;
+}
 
-    <!-- MEMBER 3 -->
-    <div class="card team-card founding">
-      <span class="founder-badge">Founding Team</span>
+/* DEPT */
+.dept-tag{
+  display:inline-block;
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:20px;
+  background:rgba(0,245,255,0.15);
+  color:#00f5ff;
+  margin-bottom:10px;
+}
 
-      <img src="team/aditya.jpg" class="team-photo">
-      <h3>Aditya Pandey</h3>
-      <span class="dept-tag">Commerce</span>
+/* ROLE */
+.role{
+  color:#00f5ff;
+  font-weight:600;
+  margin-bottom:6px;
+}
 
-      <p class="role">Backend Systems & Data Management</p>
-      <p class="desc">
-        Handles backend logic, database structuring,
-        and secure data handling across the platform.
-      </p>
-    </div>
+/* DESC */
+.desc{
+  font-size:13px;
+  opacity:.85;
+}
 
-    <!-- ================= CORE CONTRIBUTORS ================= -->
+/* FOUNDING BADGE */
+.founder-badge{
+  position:absolute;
+  top:16px;
+  right:16px;
+  padding:6px 12px;
+  font-size:11px;
+  font-weight:700;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ffd700,#ff9f00);
+  color:#1a1200;
+}
 
-    <!-- MEMBER 4 -->
-    <div class="card team-card">
-      <img src="team/aditya-mishra.jpg" class="team-photo">
-      <h3>Aditya Mishra</h3>
-      <span class="dept-tag">Computer Science</span>
+/* FACULTY STRIP */
+.faculty-strip{
+  text-align:center;
+  padding:50px 20px;
+  background:rgba(255,255,255,0.04);
+  margin-top:40px;
+}
 
-      <p class="role">Operations & Deployment</p>
-      <p class="desc">
-        Manages deployment workflows, testing cycles,
-        version releases, and overall system reliability.
-      </p>
-    </div>
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#00f5ff,#0077ff);
+  color:#020b1c;
+  text-decoration:none;
+  font-weight:700;
+}
 
-    <!-- MEMBER 5 -->
-    <div class="card team-card">
-      <img src="team/avadhut.jpg" class="team-photo">
-      <h3>Avadhut Kashid</h3>
-      <span class="dept-tag">Computer Science</span>
-
-      <p class="role">User Experience</p>
-      <p class="desc">
-        Focuses on UI consistency, user experience,
-        accessibility standards, and visual branding.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FACULTY STRIP -->
-<section class="faculty-strip fade">
-  <p>
-    <strong>Advised by Faculty</strong><br>
-    Department of Computer Science & Department of Commerce<br>
-    B. K. Birla Night College, Kalyan.
-  </p>
-</section>
-
-<section class="fade" style="text-align:center">
-  <a href="index.html" class="btn">← Back to Home</a>
-</section>
-
-</body>
-</html>
+/* RESPONSIVE */
+@media(max-width:900px){
+  .team-grid{
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  }
+}
