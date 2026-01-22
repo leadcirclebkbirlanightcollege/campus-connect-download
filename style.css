@@ -49,6 +49,7 @@ section{
   max-width:720px;
   margin:0 auto;
   opacity:.85;
+  text-align:center;
 }
 
 /* HEADINGS */
@@ -59,7 +60,9 @@ section{
   font-weight:700;
 }
 
-.team-heading.muted{opacity:.8}
+.team-heading.muted{
+  opacity:.8;
+}
 
 /* GRID */
 .team-grid{
@@ -76,6 +79,11 @@ section{
   padding:34px 24px 28px;
   text-align:center;
   position:relative;
+  transition:transform .25s ease;
+}
+
+.team-card:hover{
+  transform:translateY(-6px);
 }
 
 /* PHOTO */
@@ -121,46 +129,18 @@ section{
   border-radius:14px;
   background:linear-gradient(135deg,#ffd700,#ff9f00);
   color:#1a1200;
-  box-shadow:0 0 14px rgba(255,215,0,0.35);
+  box-shadow:0 0 12px rgba(255,215,0,0.35);
 }
 
-/* FOUNDER SPOTLIGHT */
+/* ===== FOUNDING TEAM GOLDEN GLOW (NO SPOTLIGHT) ===== */
 .team-card.founding{
-  border:1px solid rgba(255,215,0,0.4);
-  box-shadow:0 0 22px rgba(255,215,0,0.25);
-  animation:founderPulse 3.5s ease-in-out infinite;
+  border:1px solid rgba(255,215,0,0.45);
+  box-shadow:
+    0 0 18px rgba(255,215,0,0.25),
+    0 0 36px rgba(255,215,0,0.18);
 }
 
-.team-card.founding::after{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background:linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,0.15) 45%,
-    transparent 60%
-  );
-  animation:spotlight 4.5s linear infinite;
-  pointer-events:none;
-}
-
-@keyframes founderPulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.02)}
-}
-
-@keyframes spotlight{
-  from{transform:translateX(-60%)}
-  to{transform:translateX(60%)}
-}
-
-.team-card.founding:hover,
-.team-card.founding:hover::after{
-  animation-play-state:paused;
-}
-
-/* FACULTY */
+/* FACULTY STRIP */
 .faculty-strip{
   text-align:center;
   padding:50px 20px;
