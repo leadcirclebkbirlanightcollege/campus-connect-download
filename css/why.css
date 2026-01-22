@@ -1,74 +1,85 @@
+/* WHY HERO */
 .why-hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 110px 20px 70px;
 }
 
 .why-hero h1 {
-  font-size: 42px;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 
 .intro {
-  margin-top: 12px;
-  font-size: 16px;
+  margin-top: 14px;
+  font-size: 17px;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
   opacity: 0.85;
+  line-height: 1.6;
 }
 
+/* CONTENT */
 .why-content {
-  max-width: 800px;
+  max-width: 760px;
   margin: auto;
-  padding: 40px 20px 80px;
+  padding: 20px 20px 90px;
 }
 
 .block {
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .block h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 12px;
   color: #1de9ff;
 }
 
 .block p {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 15.5px;
+  line-height: 1.75;
   opacity: 0.9;
 }
 
 /* FOUNDER NOTE */
 .founder-note {
-  max-width: 800px;
-  margin: 0 auto 80px;
+  max-width: 760px;
+  margin: 0 auto 100px;
   padding: 0 20px;
 }
 
 .founder-card {
   display: flex;
-  gap: 20px;
+  gap: 22px;
   align-items: flex-start;
   background: rgba(255,255,255,0.05);
-  padding: 24px;
-  border-radius: 16px;
+  padding: 28px;
+  border-radius: 18px;
 }
 
 .founder-card img {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .note-title {
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
   color: #1de9ff;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .note-content {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 14.5px;
+  line-height: 1.65;
   opacity: 0.9;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .founder-name {
@@ -77,6 +88,24 @@
 }
 
 .founder-name span {
+  display: block;
   font-size: 13px;
-  opacity: 0.75;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .why-hero h1 {
+    font-size: 36px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .founder-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
