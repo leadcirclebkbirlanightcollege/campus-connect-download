@@ -122,7 +122,6 @@ section{
   margin-bottom:18px;
 }
 
-/* APPLE STYLE BUTTON */
 .download-btn{
   display:inline-flex;
   align-items:center;
@@ -214,20 +213,12 @@ section{
   /* DARK GOLD ACCENT */
   border:3px solid var(--gold);
   box-shadow:0 0 28px var(--gold-soft);
-
   transition:.4s;
 }
 
-/* HOVER GOLD GLOW */
 .author-photo:hover{
   box-shadow:0 0 55px var(--gold);
   transform:scale(1.05);
-}
-
-.signature-svg{
-  width:190px;
-  margin-bottom:6px;
-  opacity:.95;
 }
 
 .author-right strong{
@@ -263,10 +254,7 @@ section{
   padding:36px 26px;
   text-align:center;
   position:relative;
-
-  /* APPLE STYLE GLASS */
   backdrop-filter:blur(16px);
-
   transition:.4s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -341,7 +329,9 @@ section{
   color:var(--text-muted);
 }
 
-/* MOBILE MINI FOOTER */
+/* =========================
+   MOBILE
+========================= */
 @media(max-width:768px){
   .navbar{
     padding:0 20px;
