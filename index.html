@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Campus Connect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/index.css">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
+<body class="page">
 
-<body>
-
-<!-- 🔵 PAGE LOADER -->
+<!-- PAGE LOADER -->
 <div id="page-loader">
-  <div class="loader-logo">C</div>
+  <div class="loader-circle"></div>
 </div>
 
-<!-- 🔵 NAVBAR -->
+<!-- NAVBAR -->
 <header class="navbar">
-  <div class="nav-left">Campus Connect</div>
-  <nav class="nav-right">
+  <div class="nav-brand">Campus Connect</div>
+  <nav class="nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="why.html">Why</a>
     <a href="core-team.html">Core Team</a>
@@ -31,20 +28,19 @@
   </nav>
 </header>
 
-<!-- 🔵 HERO -->
+<!-- HERO -->
 <section class="hero">
   <h1>Campus Connect</h1>
-  <p class="hero-sub">
+  <p class="tagline">
     One trusted platform for official campus communication.
   </p>
-  <div class="hero-badges">
-    <span>✔ Faculty Approved Initiative</span>
-    <span>🎓 Student-Centric Design</span>
-  </div>
+  <p class="badges">
+    ✓ Faculty Approved Initiative &nbsp; • &nbsp; Student-Centric Design
+  </p>
 </section>
 
-<!-- 🔵 WHY SECTION -->
-<section class="why-section">
+<!-- WHY -->
+<section class="why">
   <h2>Why Campus Connect?</h2>
 
   <div class="why-grid">
@@ -65,26 +61,25 @@
   </div>
 </section>
 
-<!-- 🔵 DOWNLOAD -->
-<section class="download-section" id="download">
+<!-- DOWNLOAD -->
+<section id="download" class="download">
   <h2>Download the App</h2>
 
-  <a class="download-btn" href="CampusConnect.apk">
+  <a class="download-btn" href="#">
     ⬇ Get Campus Connect
   </a>
 
-  <p class="download-note">
+  <p class="note">
     * Enable “Install from Unknown Sources” during installation
   </p>
 </section>
 
-<!-- 🔵 FOOTER -->
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 Campus Connect • Guided by Faculty</p>
+  © 2026 Campus Connect • Guided by Faculty
 </footer>
 
-<!-- 🔵 JS (IMPORTANT: JS ONLY HERE) -->
-<script src="js/loader.js"></script>
-
+<!-- JS -->
+<script src="./js/loader.js"></script>
 </body>
 </html>
