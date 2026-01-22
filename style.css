@@ -268,3 +268,37 @@ h2{ font-size:24px; margin-bottom:28px; text-align:center; }
     justify-content:center;      /* 👈 KEY FIX */
   }
 }
+
+/* ===== CORE TEAM PERFECT GRID FIX ===== */
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:30px;
+  justify-content:center;
+}
+
+/* Card sizing */
+.team-card{
+  max-width:340px;
+  margin:0 auto;
+}
+
+/* 2nd row center alignment */
+@media (min-width: 900px){
+  .team-grid > .team-card:nth-last-child(1),
+  .team-grid > .team-card:nth-last-child(2){
+    grid-column: span 1;
+  }
+
+  .team-grid{
+    place-items:center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .team-grid{
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  }
+}
