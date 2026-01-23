@@ -38,7 +38,20 @@ body {
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 30px;
+  padding: 36px 20px;
   font-size: 14px;
+  color: #cfd8ff;
+  opacity: 0.75;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(5,11,23,0.6);
+}
+
+.footer .footer-main {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.footer .footer-sub {
+  font-size: 13px;
   opacity: 0.7;
 }
