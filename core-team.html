@@ -1,107 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Core Team | Campus Connect</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/core-team.css">
 </head>
 <body>
 
-  <header class="navbar">
-  <div class="nav-container">
-    <div class="logo">Campus Connect</div>
-    <nav>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Campus Connect</div>
+
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="why.html">Why</a>
-      <a href="core-team.html">Core Team</a>
+      <a href="core-team.html" class="active">Core Team</a>
       <a href="contact.html">Contact</a>
-      <a href="updates.html" class="active">Updates</a>
-      <a 
-        href="https://github.com/leadcirclebkbirlanightcollege/campus-connect-download/raw/main/apk/CampusConnect.apk"
-        target="_blank"
-        class="nav-download"
-      >
-        Download
-      </a>
+      <a href="updates.html">Updates</a>
+      <a href="download.html" class="nav-download">Download</a>
     </nav>
   </div>
 </header>
 
+<!-- PAGE CONTENT -->
+<section class="core-team-page">
+  <div class="container">
 
-</header>
+    <h1>Core Team</h1>
+    <p>The students who conceptualized, designed, and built Campus Connect.</p>
 
-<section class="team-hero">
-  <h1>Core Team</h1>
-  <p class="intro">
-    The students who conceptualized, designed, and built Campus Connect.
-  </p>
-</section>
+    <h2 style="margin-top:64px;">Founding Team</h2>
 
-<section class="team-section">
-  <h2>Founding Team</h2>
+    <div class="team-grid">
+      <div class="member">
+        <img src="team/atharv.jpg" alt="Atharv Jadhav">
+        <h3>Atharv Jadhav</h3>
+        <span>Project Lead</span>
+      </div>
 
-  <div class="team-grid">
-    <div class="team-card">
-      <img src="team/atharv.jpg" alt="Atharv Jadhav">
-      <h3>Atharv Jadhav</h3>
-      <p class="dept">Department of Computer Science</p>
-      <p class="role">Founder & Project Lead</p>
+      <div class="member">
+        <img src="team/pransu.jpg" alt="Pransu Mishra">
+        <h3>Pransu Mishra</h3>
+        <span>Technical Architect</span>
+      </div>
+
+      <div class="member">
+        <img src="team/aditya.jpg" alt="Aditya Pandey">
+        <h3>Aditya Pandey</h3>
+        <span>Backend Systems</span>
+      </div>
     </div>
 
-    <div class="team-card">
-      <img src="team/pransu.jpg" alt="Pransu Mishra">
-      <h3>Pransu Mishra</h3>
-      <p class="dept">Department of Computer Science</p>
-      <p class="role">Technical Architect & App Developer</p>
-    </div>
-
-    <div class="team-card">
-      <img src="team/aditya.jpg" alt="Aditya Pandey">
-      <h3>Aditya Pandey</h3>
-      <p class="dept">Department of Commerce</p>
-      <p class="role">Backend Systems & Data</p>
-    </div>
   </div>
 </section>
 
-<section class="team-section">
-  <h2>Core Contributors</h2>
-
-  <div class="team-grid">
-    <div class="team-card">
-      <img src="team/aditya-mishra.jpg" alt="Aditya Mishra">
-      <h3>Aditya Mishra</h3>
-      <p class="role">Operations & Deployment</p>
-    </div>
-
-    <div class="team-card">
-      <img src="team/avadhut.jpg" alt="Avadhut Kashid">
-      <h3>Avadhut Kashid</h3>
-      <p class="role">User Experience & Design</p>
-    </div>
-  </div>
-</section>
-
-<section class="faculty-section">
-  <p class="faculty-title">Advised by Faculty</p>
-  <p>
-    Department of Computer Science & Department of Commerce<br>
-    B. K. Birla Night College, Kalyan
-  </p>
-</section>
-
-<footer class="footer">
-  <div class="footer-main">
-    © 2026 Campus Connect
-  </div>
-  <div class="footer-sub">
-    Student-led initiative • Guided by Faculty • B. K. Birla Night College, Kalyan
-  </div>
+<footer>
+  © 2026 Campus Connect · Guided by Faculty
 </footer>
-
 
 </body>
 </html>
