@@ -1,122 +1,27 @@
-/* HERO */
 .hero {
   text-align: center;
-  padding: 130px 20px 90px;
+  padding-top: 140px;
 }
 
 .hero h1 {
-  font-size: 52px;
-  font-weight: 600;
-  letter-spacing: -0.4px;
+  font-size: 56px;
+  margin-bottom: 12px;
 }
 
-.tagline {
-  margin-top: 16px;
-  font-size: 18px;
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
+.hero p {
   opacity: 0.85;
-  line-height: 1.6;
+  margin-bottom: 32px;
 }
 
-.trust {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #9feaff;
-}
-
-/* INTRO SECTIONS */
-.home-intro {
-  max-width: 820px;
-  margin: auto;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.home-intro h2 {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.home-intro p {
-  font-size: 15.5px;
-  line-height: 1.75;
-  opacity: 0.9;
-}
-
-/* FEATURE CARDS */
-.why {
-  display: flex;
-  justify-content: center;
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 32px;
-  padding: 40px 20px 80px;
-  flex-wrap: wrap;
+  margin-top: 80px;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border-radius: 18px;
-  width: 280px;
-}
-
-.card h3 {
-  font-size: 17px;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14.5px;
-  line-height: 1.65;
-  opacity: 0.85;
-}
-
-/* DOWNLOAD */
-.download {
-  text-align: center;
-  padding: 100px 20px 120px;
-}
-
-.download h2 {
-  font-size: 30px;
-  font-weight: 600;
-}
-
-.download-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 38px;
-  background: #1de9ff;
-  color: #000;
-  border-radius: 34px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.note {
-  margin-top: 12px;
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .tagline {
-    font-size: 16px;
-  }
-
-  .home-intro {
-    padding: 40px 20px;
-  }
-
-  .download h2 {
-    font-size: 24px;
-  }
+.feature {
+  background: rgba(255,255,255,0.04);
+  padding: 28px;
+  border-radius: 16px;
 }
