@@ -1,102 +1,27 @@
-/* HERO */
-.team-hero {
-  text-align: center;
-  padding: 110px 20px 60px;
+.core-team-page {
+  min-height: 100vh;
 }
 
-.team-hero h1 {
-  font-size: 42px;
-  font-weight: 600;
-}
-
-.intro {
-  margin-top: 12px;
-  font-size: 16px;
-  opacity: 0.85;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* SECTIONS */
-.team-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px 80px;
-}
-
-.team-section h2 {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 36px;
-  text-align: center;
-  color: #1de9ff;
-}
-
-/* GRID */
 .team-grid {
-  display: flex;
-  justify-content: center;
-  gap: 36px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 48px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* CARD */
-.team-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 18px;
-  padding: 28px;
-  width: 260px;
+.member {
   text-align: center;
 }
 
-.team-card img {
-  width: 88px;
-  height: 88px;
+.member img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 14px;
+  box-shadow: 0 0 0 3px rgba(32,227,255,0.3);
 }
 
-.team-card h3 {
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.dept {
-  font-size: 13px;
-  opacity: 0.75;
-  margin-bottom: 6px;
-}
-
-.role {
+.member span {
+  opacity: 0.7;
   font-size: 14px;
-  font-weight: 500;
-  color: #9feaff;
-}
-
-/* FACULTY */
-.faculty-section {
-  text-align: center;
-  padding: 60px 20px 100px;
-  background: rgba(255,255,255,0.03);
-}
-
-.faculty-title {
-  font-size: 14px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: #1de9ff;
-  margin-bottom: 10px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .team-hero h1 {
-    font-size: 36px;
-  }
-
-  .team-section h2 {
-    font-size: 22px;
-  }
 }
