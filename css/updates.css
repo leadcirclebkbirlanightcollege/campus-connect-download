@@ -1,90 +1,16 @@
-/* ==============================
-   UPDATES / CHANGELOG PAGE
-============================== */
-
-.updates-hero {
-  text-align: center;
-  padding: 100px 20px 60px;
-}
-
-.updates-hero h1 {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.updates-hero p {
-  color: #aab4c8;
-  font-size: 16px;
-}
-
-/* CONTENT */
-.updates-content {
+.changelog {
   max-width: 800px;
-  margin: 0 auto 100px;
-  padding: 0 20px;
-}
-
-/* VERSION BLOCK */
-.version-block {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
-  padding: 30px;
-  margin-bottom: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.version-block.upcoming {
-  opacity: 0.9;
-}
-
-/* HEADER */
-.version-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+  margin: 0 auto;
 }
 
 .version {
-  font-size: 18px;
-  font-weight: 600;
-  color: #4fd1ff;
+  margin-bottom: 48px;
 }
 
-.date {
-  font-size: 14px;
-  color: #9aa6bd;
+.version h3 {
+  color: #20e3ff;
 }
 
-/* GROUPS */
-.update-group {
-  margin-bottom: 24px;
-}
-
-.update-group h4 {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #ffffff;
-}
-
-.update-group ul {
-  padding-left: 18px;
-}
-
-.update-group li {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #cbd5e1;
-  margin-bottom: 6px;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 30px 15px;
-  font-size: 13px;
-  color: #8fa1b8;
-  border-top: 1px solid rgba(255,255,255,0.05);
+.version ul {
+  padding-left: 20px;
 }
