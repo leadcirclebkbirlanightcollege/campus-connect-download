@@ -1,77 +1,80 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
+/* =========================
+   NAVBAR – FINAL FIX
+========================= */
 
-body {
-  background: radial-gradient(circle at top, #0b1a33, #050b17);
-  color: #eaf1ff;
-}
-
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  background: rgba(5,11,23,0.9);
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.navbar nav a {
-  margin-left: 20px;
-  color: #cfd8ff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.navbar nav a.active {
-  color: #1de9ff;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 36px 20px;
-  font-size: 14px;
-  color: #cfd8ff;
-  opacity: 0.75;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(5,11,23,0.6);
-}
-
-.footer .footer-main {
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.footer .footer-sub {
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-
-/* ===== NAVBAR FIX ===== */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 999;
-  background: linear-gradient(180deg, #050b18, #070f22);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  z-index: 1000;
+  background: linear-gradient(180deg, #050b18 0%, #070f22 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
   height: 64px;
+  padding: 0 24px;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 24px;
+  justify-content: space-between; /* 🔥 THIS IS KEY */
+}
+
+/* Logo / Site name */
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Nav links */
+.nav-container nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-container nav a {
+  color: #cfd8ff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-container nav a:hover {
+  color: #ffffff;
+}
+
+/* Active link */
+.nav-container nav a.active {
+  color: #20e3ff;
+}
+
+.nav-container nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #20e3ff;
+  border-radius: 2px;
+}
+
+/* Download button */
+.nav-container nav .nav-download {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #20e3ff, #4facfe);
+  color: #04121f !important;
+  font-weight: 600;
+}
+
+.nav-container nav .nav-download:hover {
+  opacity: 0.9;
 }
