@@ -55,3 +55,23 @@ body {
   font-size: 13px;
   opacity: 0.7;
 }
+
+
+/* ===== NAVBAR FIX ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: linear-gradient(180deg, #050b18, #070f22);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
