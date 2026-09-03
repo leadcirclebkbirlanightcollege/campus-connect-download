@@ -1,24 +1,26 @@
 import React from 'react';
 import { 
   Users, 
-  BookOpen, 
   GraduationCap, 
+  BookOpen, 
   Calendar, 
+  CheckSquare, 
   Award, 
-  Briefcase, 
   Rocket, 
-  ArrowDown,
+  Briefcase,
   Network
 } from 'lucide-react';
 
 export const EcosystemView: React.FC = () => {
-  const outgoingNodes = [
-    { label: 'Academics', icon: BookOpen, desc: 'Timetables & Study Materials' },
-    { label: 'Faculty', icon: GraduationCap, desc: 'Lectures & Evaluations' },
-    { label: 'Events', icon: Calendar, desc: 'Fests & Technical Symposia' },
-    { label: 'Activities', icon: Award, desc: 'Competitions & Clubs' },
-    { label: 'Opportunities', icon: Briefcase, desc: 'Internships & Projects' },
-    { label: 'Entrepreneurship', icon: Rocket, desc: 'E-Cell Incubation' }
+  const ecosystemPillars = [
+    { label: 'STUDENTS', icon: Users, desc: 'Central campus community' },
+    { label: 'FACULTY', icon: GraduationCap, desc: 'Academic leadership & guidance' },
+    { label: 'ACADEMICS', icon: BookOpen, desc: 'Timetables & study resources' },
+    { label: 'EVENTS', icon: Calendar, desc: 'College fests & technical symposia' },
+    { label: 'ATTENDANCE', icon: CheckSquare, desc: 'Real-time 75% compliance tracking' },
+    { label: 'ACTIVITIES', icon: Award, desc: 'Sports, cultural & departmental clubs' },
+    { label: 'E-CELL', icon: Rocket, desc: 'Student startup incubation' },
+    { label: 'OPPORTUNITIES', icon: Briefcase, desc: 'Internships & campus projects' }
   ];
 
   return (
@@ -29,68 +31,46 @@ export const EcosystemView: React.FC = () => {
           <span className="section-super-eyebrow">
             <Network size={14} /> Integrated Digital Infrastructure
           </span>
-          <h2 className="section-main-heading">More Than an App. A Campus Platform.</h2>
+          <h2 className="section-main-heading">Campus Connect Connects the Campus</h2>
           <p className="section-sub-copy">
-            Campus Connect acts as the centralized bridge uniting students, academic departments, leadership, and extra-curricular initiatives across B. K. Birla Night College.
+            A single, cohesive platform bringing every facet of B. K. Birla Night College together into one unified experience.
           </p>
         </div>
 
-        {/* Visual Architecture Flow Diagram */}
-        <div className="ecosystem-flow-diagram">
+        {/* Elegant Ecosystem System Visualizer */}
+        <div className="ecosystem-radial-system">
           
-          {/* Top Level: Students */}
-          <div className="flow-tier-top">
-            <div className="flow-student-card">
-              <div className="flow-icon-circle student-circle">
-                <Users size={22} />
-              </div>
-              <div className="flow-node-text">
-                <span className="flow-node-title">STUDENTS</span>
-                <span className="flow-node-sub">Enrolled learners & campus community</span>
-              </div>
+          {/* Central Hub */}
+          <div className="ecosystem-core-hub">
+            <div className="core-hub-ring-pulse" />
+            <div className="core-hub-inner">
+              <img 
+                src="/assets/logo.png" 
+                alt="Campus Connect Core" 
+                className="core-hub-logo" 
+              />
+              <span className="core-hub-tag">CORE PLATFORM</span>
+              <h3 className="core-hub-title">CAMPUS CONNECT</h3>
+              <span className="core-hub-sub">BKBNC Kalyan</span>
             </div>
           </div>
 
-          {/* Connector Down */}
-          <div className="flow-connector-line">
-            <ArrowDown size={20} className="connector-arrow" />
-          </div>
-
-          {/* Center Hub: Campus Connect */}
-          <div className="flow-tier-center">
-            <div className="flow-hub-card">
-              <div className="flow-hub-logo-box">
-                <img src="/assets/logo.png" alt="Campus Connect Core" className="flow-hub-logo" />
-              </div>
-              <div className="flow-hub-info">
-                <span className="flow-hub-badge">CENTRAL PLATFORM</span>
-                <h3 className="flow-hub-name">CAMPUS CONNECT</h3>
-                <span className="flow-hub-sub">B. K. Birla Night College, Kalyan • Dept. of Computer Science</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Connector Down */}
-          <div className="flow-connector-line">
-            <ArrowDown size={20} className="connector-arrow" />
-          </div>
-
-          {/* Bottom Tier: Connected Nodes */}
-          <div className="flow-tier-bottom">
-            <div className="flow-nodes-grid">
-              {outgoingNodes.map((node, i) => {
-                const Icon = node.icon;
-                return (
-                  <div key={i} className="flow-destination-card">
-                    <div className="destination-icon-box">
-                      <Icon size={18} />
-                    </div>
-                    <span className="destination-title">{node.label}</span>
-                    <span className="destination-desc">{node.desc}</span>
+          {/* Connected Surrounding Orbitals */}
+          <div className="ecosystem-satellite-grid">
+            {ecosystemPillars.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <div key={idx} className="ecosystem-satellite-card">
+                  <div className="satellite-icon-box">
+                    <Icon size={18} />
                   </div>
-                );
-              })}
-            </div>
+                  <div className="satellite-text">
+                    <span className="satellite-title">{pillar.label}</span>
+                    <span className="satellite-desc">{pillar.desc}</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>

@@ -3,11 +3,10 @@ import { ReleaseConfig } from '../config/appConfig';
 import { 
   Download, 
   QrCode, 
-  Share2, 
   CheckCircle2, 
-  HelpCircle,
-  Copy,
-  Check
+  Check,
+  ShieldCheck,
+  Sparkles
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { trackEvent } from '../utils/analytics';
@@ -15,237 +14,236 @@ import { trackEvent } from '../utils/analytics';
 interface HeroProps {
   config: ReleaseConfig;
   onOpenQR: () => void;
-  onOpenShare: () => void;
   onDownload: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   config,
   onOpenQR,
-  onOpenShare,
   onDownload
 }) => {
   const [downloading, setDownloading] = useState(false);
-  const [copiedHash, setCopiedHash] = useState(false);
 
-  const handleDownloadClick = () => {
-    if (config.status !== 'available' || !config.apkUrl) {
-      return;
-    }
-
+  const handlePrimaryDownload = () => {
     setDownloading(true);
-    trackEvent('download_apk_click', {
-      version: config.version,
-      fileName: config.apkFileName
+    confetti({
+      particleCount: 50,
+      spread: 60,
+      origin: { y: 0.6 }
     });
-
-    try {
-      confetti({
-        particleCount: 50,
-        spread: 60,
-        origin: { y: 0.65 },
-        colors: ['#1D4ED8', '#2563EB', '#06B6D4', '#93C5FD']
-      });
-    } catch {
-      // Ignore
-    }
-
+    trackEvent('hero_download_click', { version: config.version });
     onDownload();
-
-    setTimeout(() => {
-      setDownloading(false);
-    }, 2000);
-  };
-
-  const handleCopyHash = () => {
-    navigator.clipboard.writeText(config.sha256);
-    setCopiedHash(true);
-    trackEvent('copy_link_clicked', { type: 'sha256_hash' });
-    setTimeout(() => setCopiedHash(false), 2000);
+    setTimeout(() => setDownloading(false), 2200);
   };
 
   return (
-    <section id="overview" className="product-listing-section">
+    <section id="overview" className="app-product-hero">
+      {/* Background ambient lighting */}
+      <div className="hero-ambient-glow" aria-hidden="true" />
+      <div className="hero-subtle-grid" aria-hidden="true" />
+
       <div className="product-container">
-        
-        {/* Main 2-Column App Store Product Layout */}
-        <div className="product-header-grid">
+        <div className="hero-grid-layout">
           
-          {/* LEFT: App Identity & Editorial Info */}
-          <div className="product-identity-column">
+          {/* LEFT: Product Identity & Primary Actions */}
+          <div className="hero-content-col">
             
-            <div className="app-badge-row">
-              <div className="app-icon-squircle">
+            {/* App Icon + Title Group */}
+            <div className="hero-brand-header">
+              <div className="hero-app-icon-squircle">
                 <img 
                   src="/assets/logo.png" 
                   alt="Campus Connect Official App Icon" 
-                  className="app-icon-img"
+                  className="hero-app-icon-img" 
                 />
               </div>
 
-              <div className="app-title-group">
-                <div className="app-institutional-super">
-                  <span>{config.institution}</span>
+              <div className="hero-brand-meta">
+                <div className="hero-badge-row">
+                  <span className="hero-official-badge">
+                    <ShieldCheck size={13} />
+                    Official Campus Application
+                  </span>
                 </div>
-                <h1 className="app-display-title">{config.appName}</h1>
-                <div className="app-department-sub">
-                  <span>{config.department}</span>
+                <h1 className="hero-app-title">{config.appName}</h1>
+                <div className="hero-institutional-credit">
+                  <span className="hero-college-text">{config.institution}</span>
+                  <span className="hero-bullet">•</span>
+                  <span className="hero-dept-text">{config.department}</span>
                 </div>
               </div>
             </div>
 
-            {/* Tagline & Short Description */}
-            <div className="app-tagline-block">
-              <p className="app-lead-quote">"Your Campus. One Platform."</p>
-              <p className="app-lead-description">
-                Connect with your campus through academics, announcements, attendance, events, activities and opportunities — all in one place.
+            {/* Headline */}
+            <div className="hero-messaging-block">
+              <h2 className="hero-headline">
+                Your Campus.<br />
+                <span className="hero-headline-accent">One Platform.</span>
+              </h2>
+              <p className="hero-description">
+                Stay connected with academics, announcements, attendance, events, activities and opportunities through one smart campus platform.
               </p>
             </div>
 
-            {/* Trust Indicator */}
-            <div className="official-trust-badge">
-              <CheckCircle2 size={17} className="trust-check-icon" />
-              <div className="trust-badge-text">
-                <span className="trust-title">Official Campus Connect Application</span>
-                <span className="trust-dept">{config.institution} • {config.department}</span>
+            {/* Compact Store Metadata Row */}
+            <div className="hero-metadata-strip">
+              <div className="hero-meta-item">
+                <span className="meta-label">Platform</span>
+                <span className="meta-value">Android</span>
+              </div>
+              <div className="meta-separator" />
+              <div className="hero-meta-item">
+                <span className="meta-label">Version</span>
+                <span className="meta-value">v{config.version}</span>
+              </div>
+              <div className="meta-separator" />
+              <div className="hero-meta-item">
+                <span className="meta-label">Release</span>
+                <span className="meta-value">Official</span>
+              </div>
+              <div className="meta-separator" />
+              <div className="hero-meta-item">
+                <span className="meta-label">Package Size</span>
+                <span className="meta-value">{config.fileSize}</span>
               </div>
             </div>
 
-            {/* App Store Style Information Row (No Fake Data) */}
-            <div className="app-store-meta-bar">
-              <div className="meta-pill-item">
-                <span className="meta-pill-label">Platform</span>
-                <span className="meta-pill-val">Android</span>
-              </div>
-              <div className="meta-pill-divider" />
-              <div className="meta-pill-item">
-                <span className="meta-pill-label">Version</span>
-                <span className="meta-pill-val">v{config.version}</span>
-              </div>
-              <div className="meta-pill-divider" />
-              <div className="meta-pill-item">
-                <span className="meta-pill-label">Status</span>
-                <span className="meta-pill-val official-text">Official</span>
-              </div>
-              <div className="meta-pill-divider" />
-              <div className="meta-pill-item">
-                <span className="meta-pill-label">Institution</span>
-                <span className="meta-pill-val">BKBNC</span>
-              </div>
-              <div className="meta-pill-divider" />
-              <div className="meta-pill-item">
-                <span className="meta-pill-label">Package Size</span>
-                <span className="meta-pill-val">{config.fileSize}</span>
-              </div>
-            </div>
-
-          </div>
-
-          {/* RIGHT: Primary Install / Action Block */}
-          <div className="product-action-column">
-            <div className="product-install-card">
-              
-              <div className="install-card-header">
-                <div className="install-tag-row">
-                  <span className="status-live-chip">Direct APK Delivery</span>
-                  <span className="version-tag-pill">v{config.version}</span>
-                </div>
-                <h2 className="install-heading">Download Official APK</h2>
-                <p className="install-sub">Direct installation for Android devices (8.0+)</p>
-              </div>
-
-              {/* Large Primary Download CTA */}
+            {/* Primary Action Buttons */}
+            <div className="hero-cta-group">
               <button 
                 type="button" 
-                className={`btn-primary-install ${downloading ? 'downloading' : ''}`}
-                onClick={handleDownloadClick}
+                className={`btn-hero-primary-download ${downloading ? 'is-downloading' : ''}`}
+                onClick={handlePrimaryDownload}
                 aria-label={`Download Campus Connect APK Version ${config.version}`}
               >
-                <Download size={22} className="btn-icon-pulse" />
-                <div className="btn-install-label-group">
-                  <span className="btn-label-main">
-                    {downloading ? 'Starting Download...' : 'Download APK'}
+                <div className="btn-icon-wrapper">
+                  {downloading ? <Check size={20} /> : <Download size={20} />}
+                </div>
+                <div className="btn-text-wrapper">
+                  <span className="btn-main-text">
+                    {downloading ? 'Downloading...' : 'Download APK'}
                   </span>
-                  <span className="btn-label-sub">
-                    Version {config.version} • {config.fileSize}
+                  <span className="btn-sub-text">
+                    v{config.version} • {config.fileSize} • Free
                   </span>
                 </div>
               </button>
 
-              {/* Secondary Actions */}
-              <div className="install-secondary-actions">
-                <button 
-                  type="button" 
-                  className="btn-store-secondary"
-                  onClick={onOpenQR}
-                  title="Scan QR Code with your phone"
-                >
-                  <QrCode size={16} />
-                  <span>Scan to Download</span>
-                </button>
+              <a 
+                href="#qr-download"
+                className="btn-hero-secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.getElementById('qr-download');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    onOpenQR();
+                  }
+                }}
+              >
+                <QrCode size={18} />
+                <span>Scan to Download</span>
+              </a>
+            </div>
 
-                <a 
-                  href="#how-to-get" 
-                  className="btn-store-secondary"
-                  title="How to install APK"
-                >
-                  <HelpCircle size={16} />
-                  <span>Install Guide</span>
-                </a>
+            {/* Verification Security Subtext */}
+            <div className="hero-security-note">
+              <CheckCircle2 size={15} className="note-icon" />
+              <span>Verified Android release (8.0+) • Package: <code>{config.packageName}</code></span>
+            </div>
 
-                <button 
-                  type="button" 
-                  className="btn-store-secondary"
-                  onClick={onOpenShare}
-                  title="Share download link"
-                >
-                  <Share2 size={16} />
-                  <span>Share</span>
-                </button>
-              </div>
+          </div>
 
-              {/* Metadata Verification Card */}
-              <div className="install-meta-list">
-                <div className="install-meta-row">
-                  <span className="meta-row-label">Release Date</span>
-                  <span className="meta-row-value">{config.releaseDate}</span>
-                </div>
-                <div className="install-meta-row">
-                  <span className="meta-row-label">Required OS</span>
-                  <span className="meta-row-value">{config.minAndroidVersion}</span>
-                </div>
-                <div className="install-meta-row">
-                  <span className="meta-row-label">Package Name</span>
-                  <span className="meta-row-value code-font">{config.packageName}</span>
-                </div>
-                <div className="install-meta-row hash-row">
-                  <span className="meta-row-label">SHA-256 Checksum</span>
-                  <div className="hash-copy-wrapper">
-                    <span className="hash-preview" title={config.sha256}>
-                      {config.sha256.substring(0, 10)}...{config.sha256.substring(config.sha256.length - 6)}
-                    </span>
-                    <button 
-                      type="button" 
-                      className="btn-copy-hash" 
-                      onClick={handleCopyHash}
-                      title="Copy full SHA-256 Checksum"
-                      aria-label="Copy SHA-256 Checksum"
-                    >
-                      {copiedHash ? <Check size={13} color="#10B981" /> : <Copy size={13} />}
-                    </button>
+          {/* RIGHT: Authentic Product Showcase with Live Native Screen */}
+          <div className="hero-showcase-col">
+            <div className="hero-device-wrapper">
+              
+              {/* Outer Phone Chassis */}
+              <div className="hero-phone-chassis">
+                {/* Status bar / Notch */}
+                <div className="phone-top-notch">
+                  <span className="phone-clock">9:41</span>
+                  <div className="phone-speaker-pill" />
+                  <div className="phone-camera-lens" />
+                  <div className="phone-status-icons">
+                    <span className="status-dot" />
+                    <span className="status-battery" />
                   </div>
                 </div>
+
+                {/* Device Screen UI: Campus Connect Real Dashboard */}
+                <div className="hero-screen-content">
+                  
+                  {/* Dashboard Header */}
+                  <div className="screen-dash-header">
+                    <div>
+                      <span className="dash-greeting">Welcome back,</span>
+                      <h3 className="dash-student-name">Atharva M.</h3>
+                      <span className="dash-roll">TYBSc CS • Roll 2026-042</span>
+                    </div>
+                    <div className="dash-avatar-badge">AM</div>
+                  </div>
+
+                  {/* Attendance Card with Progress Ring */}
+                  <div className="screen-attendance-widget">
+                    <div className="att-info">
+                      <span className="att-label">OVERALL ATTENDANCE</span>
+                      <div className="att-percent">82.4%</div>
+                      <span className="att-status">✓ 7.4% Above Mandatory 75%</span>
+                    </div>
+                    <div className="att-ring-graphic">
+                      <svg viewBox="0 0 36 36" className="circular-chart">
+                        <path 
+                          className="circle-bg" 
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path 
+                          className="circle-fill" 
+                          strokeDasharray="82, 100" 
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                      </svg>
+                      <span className="ring-text">82%</span>
+                    </div>
+                  </div>
+
+                  {/* Live Class Today */}
+                  <div className="screen-live-class">
+                    <div className="live-class-head">
+                      <span className="live-pill">NEXT LECTURE</span>
+                      <span className="live-time">10:45 AM</span>
+                    </div>
+                    <div className="live-subj-title">Data Structures &amp; Algorithms</div>
+                    <div className="live-room-prof">Room 204 • Prof. K. Deshmukh</div>
+                  </div>
+
+                  {/* Quick Notice Pill */}
+                  <div className="screen-notice-mini">
+                    <div className="notice-mini-dot" />
+                    <div className="notice-mini-text">
+                      <strong>Exam Notice:</strong> Semester schedule released by Examination Cell.
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
-              <div className="install-footer-note">
-                Official Campus Connect Android Application • B. K. Birla Night College, Kalyan
+              {/* Floating Highlight Chips */}
+              <div className="floating-badge badge-attendance">
+                <CheckCircle2 size={14} color="#059669" />
+                <span>Real-Time Attendance</span>
+              </div>
+
+              <div className="floating-badge badge-circulars">
+                <Sparkles size={14} color="#1D4ED8" />
+                <span>Verified Circulars</span>
               </div>
 
             </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );

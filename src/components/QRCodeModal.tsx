@@ -15,36 +15,20 @@ interface QRCodeSectionProps {
 export const QRCodeComponent: React.FC<QRCodeSectionProps> = ({
   apkUrl,
   version,
-  officialDomain,
   isOpen = true,
   onClose,
   isModal = false
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [copied, setCopied] = useState(false);
-  const [downloadTargetUrl, setDownloadTargetUrl] = useState('');
+  
+  // Production official download URL
+  const downloadTargetUrl = `https://campus-connect-download.vercel.app${apkUrl}`;
 
   useEffect(() => {
-    // Generate valid download URL
-    let target = '';
-    if (typeof window !== 'undefined') {
-      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      if (isLocal) {
-        // When testing locally, use local origin so tester can download
-        target = `${window.location.origin}${apkUrl}`;
-      } else {
-        // On staging/production, point to official production domain
-        target = `https://${officialDomain}${apkUrl}`;
-      }
-    } else {
-      target = `https://${officialDomain}${apkUrl}`;
-    }
-
-    setDownloadTargetUrl(target);
-
     if (canvasRef.current) {
-      QRCode.toCanvas(canvasRef.current, target, {
-        width: isModal ? 200 : 220,
+      QRCode.toCanvas(canvasRef.current, downloadTargetUrl, {
+        width: isModal ? 200 : 240,
         margin: 2,
         color: {
           dark: '#0F172A',
@@ -55,7 +39,7 @@ export const QRCodeComponent: React.FC<QRCodeSectionProps> = ({
         if (error) console.error('QR code error:', error);
       });
     }
-  }, [apkUrl, officialDomain, isOpen]);
+  }, [downloadTargetUrl, isModal, isOpen]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(downloadTargetUrl);
@@ -80,23 +64,23 @@ export const QRCodeComponent: React.FC<QRCodeSectionProps> = ({
       {/* Info Left */}
       <div className="qr-info-side">
         <div className="section-super-eyebrow">
-          <QrCode size={15} /> Instant Mobile Transfer
+          <QrCode size={14} /> Instant Phone Transfer
         </div>
-        <h3 className="qr-main-title">
+        <h2 className="qr-main-title">
           Scan. Download. Connect.
-        </h3>
+        </h2>
         <p className="qr-lead-desc">
-          Scan this QR code with your Android phone to download Campus Connect directly to your device.
+          Scan this QR code with your Android phone to download Campus Connect.
         </p>
 
         <div className="qr-specs-bullet-list">
           <div className="qr-bullet-row">
             <Smartphone size={16} className="bullet-icon" />
-            <span>Compatible with any standard Android camera or Google Lens</span>
+            <span>Open with your Android phone camera or Google Lens</span>
           </div>
           <div className="qr-bullet-row">
             <ShieldCheck size={16} className="bullet-icon text-success" />
-            <span>Official Version {version} APK Package</span>
+            <span>Direct package download for Version {version}</span>
           </div>
         </div>
 
@@ -109,7 +93,7 @@ export const QRCodeComponent: React.FC<QRCodeSectionProps> = ({
             className="btn-copy-mini"
             onClick={handleCopyLink}
           >
-            {copied ? <Check size={13} color="#10B981" /> : <Copy size={13} />}
+            {copied ? <Check size={13} color="#059669" /> : <Copy size={13} />}
             <span>{copied ? 'Copied' : 'Copy'}</span>
           </button>
         </div>
@@ -121,8 +105,8 @@ export const QRCodeComponent: React.FC<QRCodeSectionProps> = ({
           <canvas ref={canvasRef} />
         </div>
         <div className="qr-caption-label">
-          <span>Point your phone camera here</span>
-          <span className="qr-sub-tag">v{version} • Campus Connect</span>
+          <span>Point camera to scan</span>
+          <span className="qr-sub-tag">v{version} • Campus Connect APK</span>
         </div>
       </div>
     </div>

@@ -7,99 +7,113 @@ interface HeaderProps {
   onDownload: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({
-  config,
-  onDownload
-}) => {
-  const [scrolled, setScrolled] = useState(false);
+export const Header: React.FC<HeaderProps> = ({ config, onDownload }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 15);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = () => {
-    setMobileMenuOpen(false);
-  };
+  const navLinks = [
+    { label: 'Overview', href: '#overview' },
+    { label: 'Screenshots', href: '#screenshots' },
+    { label: 'Features', href: '#features' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Install Guide', href: '#installation' },
+    { label: 'Scan QR', href: '#qr-download' },
+    { label: 'FAQ', href: '#faq' }
+  ];
 
   return (
-    <header className={`product-header-nav ${scrolled ? 'nav-scrolled' : ''}`}>
-      <div className="product-nav-container">
-        {/* Left: Brand Identity */}
-        <a href="#" className="nav-brand" aria-label="Campus Connect Home">
-          <div className="nav-logo-box">
-            <img 
-              src="/assets/logo.png" 
-              alt="Campus Connect Logo" 
-              className="nav-logo-img"
-            />
+    <header className={`top-navbar ${isScrolled ? 'is-scrolled' : ''}`}>
+      <div className="product-container">
+        <div className="navbar-inner">
+          
+          {/* Brand Left */}
+          <a href="#overview" className="nav-brand-group">
+            <div className="nav-logo-squircle">
+              <img 
+                src="/assets/logo.png" 
+                alt="Campus Connect Logo" 
+                className="nav-logo-image" 
+              />
+            </div>
+            <div className="nav-title-column">
+              <span className="nav-app-heading">{config.appName}</span>
+              <span className="nav-institution-tag">BKBNC Kalyan</span>
+            </div>
+          </a>
+
+          {/* Desktop Nav Center */}
+          <nav className="nav-links-center" aria-label="Main Navigation">
+            {navLinks.map((link, idx) => (
+              <a 
+                key={idx} 
+                href={link.href}
+                className="nav-anchor-link"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Nav Right: Single Clean Download Action */}
+          <div className="nav-action-right">
+            <button 
+              type="button" 
+              className="btn-nav-download-action"
+              onClick={onDownload}
+              aria-label="Download Campus Connect Application"
+            >
+              <Download size={14} />
+              <span>Download App</span>
+            </button>
+
+            {/* Mobile Menu Toggle Button */}
+            <button 
+              type="button" 
+              className="mobile-hamburger-btn"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
-          <div className="nav-brand-text">
-            <span className="nav-app-name">{config.appName}</span>
-            <span className="nav-college-tag">BKBNC Kalyan</span>
-          </div>
-        </a>
 
-        {/* Center: Clean Navigation */}
-        <nav className="nav-links-desktop" aria-label="Main Navigation">
-          <a href="#overview" className="nav-item">Overview</a>
-          <a href="#screenshots" className="nav-item">Screenshots</a>
-          <a href="#features" className="nav-item">Features</a>
-          <a href="#how-to-get" className="nav-item">How to Install</a>
-          <a href="#qr-download" className="nav-item">Scan QR</a>
-          <a href="#faq" className="nav-item">FAQ</a>
-        </nav>
-
-        {/* Right: Primary Action Button */}
-        <div className="nav-actions">
-          <button 
-            type="button" 
-            className="btn-nav-download" 
-            onClick={onDownload}
-            aria-label={`Download Campus Connect v${config.version}`}
-          >
-            <Download size={15} />
-            <span>Download App</span>
-          </button>
-
-          {/* Mobile Hamburger Toggle */}
-          <button 
-            type="button" 
-            className="mobile-toggle-btn"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-nav-panel">
-          <div className="mobile-nav-panel-inner">
-            <a href="#overview" className="mobile-nav-link" onClick={handleNavClick}>Overview</a>
-            <a href="#screenshots" className="mobile-nav-link" onClick={handleNavClick}>Screenshots</a>
-            <a href="#features" className="mobile-nav-link" onClick={handleNavClick}>Features</a>
-            <a href="#how-to-get" className="mobile-nav-link" onClick={handleNavClick}>How to Install</a>
-            <a href="#qr-download" className="mobile-nav-link" onClick={handleNavClick}>Scan QR</a>
-            <a href="#faq" className="mobile-nav-link" onClick={handleNavClick}>FAQ</a>
-            
-            <div className="mobile-nav-cta">
-              <button 
-                type="button" 
-                className="btn-primary-install"
-                style={{ width: '100%', justifyContent: 'center', padding: '0.75rem 1rem' }}
-                onClick={() => { setMobileMenuOpen(false); onDownload(); }}
-              >
-                <Download size={17} />
-                <span>Download APK (v{config.version})</span>
-              </button>
+        <div className="mobile-nav-drawer">
+          <div className="product-container">
+            <div className="mobile-nav-links-stack">
+              {navLinks.map((link, idx) => (
+                <a 
+                  key={idx}
+                  href={link.href}
+                  className="mobile-nav-item"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="mobile-nav-bottom-cta">
+                <button 
+                  type="button" 
+                  className="btn-mobile-download-full"
+                  onClick={() => { setMobileMenuOpen(false); onDownload(); }}
+                >
+                  <Download size={16} />
+                  <span>Download APK (v{config.version})</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

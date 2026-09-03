@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ReleaseConfig, DEFAULT_APP_CONFIG } from './config/appConfig';
 import { Header } from './components/Header';
-import { StickyDownloadBar } from './components/StickyDownloadBar';
 import { Hero } from './components/Hero';
 import { AppPreviewMockup } from './components/AppPreviewMockup';
 import { FeatureGrid } from './components/FeatureGrid';
 import { EcosystemView } from './components/EcosystemView';
 import { HowItWorks } from './components/HowItWorks';
+import { InstallationGuide } from './components/InstallationGuide';
 import { QRCodeComponent } from './components/QRCodeModal';
 import { InstallationFaq } from './components/InstallationFaq';
 import { ECellSection } from './components/ECellSection';
@@ -36,7 +36,7 @@ export const App: React.FC = () => {
         }));
       })
       .catch(() => {
-        // Fallback gracefully
+        // Graceful fallback to default config
       });
   }, []);
 
@@ -44,7 +44,7 @@ export const App: React.FC = () => {
     setToastMessage(msg);
     setTimeout(() => {
       setToastMessage(null);
-    }, 3000);
+    }, 3200);
   };
 
   const handleDownload = () => {
@@ -58,7 +58,7 @@ export const App: React.FC = () => {
       file: config.apkFileName
     });
 
-    showToast(`Downloading Campus Connect v${config.version}...`);
+    showToast(`Starting download: Campus Connect v${config.version}...`);
 
     const link = document.createElement('a');
     link.href = config.apkUrl;
@@ -70,45 +70,39 @@ export const App: React.FC = () => {
 
   return (
     <div className="product-app-wrapper">
-      {/* 1. Minimal Top Navigation */}
+      {/* 1. Single Clean Top Navigation (Zero duplicate bars) */}
       <Header 
         config={config}
         onDownload={handleDownload}
       />
 
-      {/* 2. Compact Sticky Scroll Bar (Appears when scrolled past hero) */}
-      <StickyDownloadBar 
-        config={config}
-        onOpenQR={() => setIsQrModalOpen(true)}
-        onOpenShare={() => setIsShareModalOpen(true)}
-        onDownload={handleDownload}
-      />
-
       <main>
-        {/* 3. Authentic App Store Product Listing Header */}
+        {/* 2. App Product Hero: Identity + Direct Action (Left) & Real Phone Showcase (Right) */}
         <Hero 
           config={config}
           onOpenQR={() => setIsQrModalOpen(true)}
-          onOpenShare={() => setIsShareModalOpen(true)}
           onDownload={handleDownload}
         />
 
-        {/* 4. "See Campus Connect in Action" Screenshot Gallery */}
+        {/* 3. See Campus Connect in Action: Authentic Screenshot Gallery */}
         <AppPreviewMockup />
 
-        {/* 5. "Everything You Need. One Campus." Structured Feature Matrix */}
+        {/* 4. Structured Product Features: Everything You Need. One Campus. */}
         <FeatureGrid />
 
-        {/* 6. Campus Connect Platform Ecosystem Architecture */}
+        {/* 5. Campus Connect Ecosystem Architecture */}
         <EcosystemView />
 
-        {/* 7. How to Get the App (01 Download -> 02 Install -> 03 Connect) */}
-        <HowItWorks 
+        {/* 6. How It Works (01 Download -> 02 Install -> 03 Connect) */}
+        <HowItWorks />
+
+        {/* 7. Installation Guide (5 Concise Android Setup Steps) */}
+        <InstallationGuide 
+          config={config}
           onDownload={handleDownload}
-          version={config.version}
         />
 
-        {/* 8. Dedicated "Scan. Download. Connect." QR Section */}
+        {/* 8. Dedicated Scan. Download. Connect. QR Section */}
         <QRCodeComponent 
           apkUrl={config.apkUrl}
           version={config.version}
@@ -116,13 +110,12 @@ export const App: React.FC = () => {
           isModal={false}
         />
 
-        {/* 9. Installation Guide & FAQ Collapsible Accordion */}
+        {/* 9. Collapsible FAQ Accordion */}
         <InstallationFaq 
           config={config}
-          onDownload={handleDownload}
         />
 
-        {/* 10. E-Cell: Vision to Venture Spotlight */}
+        {/* 10. E-Cell: Vision to Venture (Subordinated Community Innovation) */}
         <ECellSection />
       </main>
 
@@ -133,7 +126,7 @@ export const App: React.FC = () => {
         onDownload={handleDownload}
       />
 
-      {/* Dynamic QR Code Modal Popup */}
+      {/* QR Code Dialog Modal */}
       <QRCodeComponent 
         apkUrl={config.apkUrl}
         version={config.version}
@@ -143,7 +136,7 @@ export const App: React.FC = () => {
         isModal={true}
       />
 
-      {/* Share Experience Modal */}
+      {/* Share Dialog Modal */}
       <ShareModal 
         isOpen={isShareModalOpen}
         onClose={() => setIsShareModalOpen(false)}
@@ -158,11 +151,11 @@ export const App: React.FC = () => {
         config={config}
       />
 
-      {/* Subtle Toast Feedback */}
+      {/* Feedback Toast */}
       {toastMessage && (
-        <div className="toast-container" role="alert">
+        <div className="toast-container" role="status" aria-live="polite">
           <div className="toast-card">
-            <CheckCircle2 size={17} color="#10B981" />
+            <CheckCircle2 size={16} color="#10B981" />
             <span>{toastMessage}</span>
           </div>
         </div>

@@ -1,94 +1,84 @@
 import React from 'react';
-import { 
-  Download, 
-  ShieldAlert, 
-  HelpCircle
-} from 'lucide-react';
+import { ShieldCheck, Download, CheckCircle2 } from 'lucide-react';
+import { ReleaseConfig } from '../config/appConfig';
 
 interface InstallationGuideProps {
+  config: ReleaseConfig;
   onDownload: () => void;
-  officialDomain: string;
 }
 
-export const InstallationGuide: React.FC<InstallationGuideProps> = ({ 
-  onDownload, 
-  officialDomain 
-}) => {
+export const InstallationGuide: React.FC<InstallationGuideProps> = ({ config, onDownload }) => {
   const steps = [
     {
-      title: 'Tap "Download APK"',
-      desc: 'Use the official download button on this portal to fetch the authentic package.'
+      step: '01',
+      title: 'Download the official APK.',
+      detail: 'Tap the Download APK button on this portal to download the package.'
     },
     {
-      title: 'Wait for Download to Complete',
-      desc: 'Check your notification bar or browser downloads list for the completed file.'
+      step: '02',
+      title: 'Open the downloaded APK.',
+      detail: 'Locate the downloaded package in your notifications or Files > Downloads.'
     },
     {
-      title: 'Open Downloaded APK',
-      desc: 'Tap the downloaded file from notifications or open your device Files / Downloads app.'
+      step: '03',
+      title: 'Follow Android\'s prompt if required.',
+      detail: 'If prompted, tap "Settings" and toggle "Allow from this source" to proceed safely.'
     },
     {
-      title: 'Allow Installation from this Source',
-      desc: 'If Android displays "Install unknown apps", tap Settings and toggle "Allow from this source" for your browser/file manager.'
+      step: '04',
+      title: 'Open Campus Connect.',
+      detail: 'Once the installation finishes, tap "Open" to launch the application.'
     },
     {
-      title: 'Confirm Installation',
-      desc: 'Tap "Install" on the system prompt and wait a few seconds while Android verifies the package.'
-    },
-    {
-      title: 'Open & Log In',
-      desc: 'Launch Campus Connect and log in using your authorized college credentials.'
+      step: '05',
+      title: 'Sign in with your credentials.',
+      detail: 'Enter your authorized student or faculty account to access your campus dashboard.'
     }
   ];
 
   return (
-    <section id="install-guide" className="install-guide-section">
-      <div className="container">
-        <div className="section-header">
-          <div className="section-eyebrow">
-            <HelpCircle size={16} /> Direct Android Setup
+    <section id="installation" className="installation-guide-section">
+      <div className="product-container">
+        
+        <div className="install-guide-card">
+          <div className="install-guide-header">
+            <div className="section-super-eyebrow">
+              <ShieldCheck size={14} /> Android 8.0+ Setup
+            </div>
+            <h2 className="section-main-heading">Install Campus Connect</h2>
+            <p className="section-sub-copy">
+              Quick, direct package installation on any compatible Android device.
+            </p>
           </div>
-          <h2 className="section-title">How to Install Campus Connect</h2>
-          <p className="section-description">
-            Follow this safe, standard walkthrough to install the official institutional APK package on your Android device.
-          </p>
-        </div>
 
-        <div className="guide-box">
-          <div className="guide-steps-list">
-            {steps.map((step, idx) => (
-              <div key={idx} className="guide-step-item">
-                <div className="guide-step-index">{idx + 1}</div>
-                <div className="guide-step-content">
-                  <h4>{step.title}</h4>
-                  <p>{step.desc}</p>
+          <div className="install-steps-list">
+            {steps.map((s, idx) => (
+              <div key={idx} className="install-step-row">
+                <div className="install-step-index">{s.step}</div>
+                <div className="install-step-body">
+                  <h3 className="install-step-heading">{s.title}</h3>
+                  <p className="install-step-detail">{s.detail}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Security Best Practice Notice */}
-          <div className="security-tip-callout">
-            <ShieldAlert size={24} />
-            <div>
-              <h5>Official Source Security Notice</h5>
-              <p>
-                Android displays a standard prompt when installing direct APKs outside the Play Store. Always verify you are downloading exclusively from the official college portal at <strong>{officialDomain}</strong>. Never download Campus Connect from third-party websites or untrusted links.
-              </p>
+          <div className="install-guide-bottom-bar">
+            <div className="install-guide-trust-note">
+              <CheckCircle2 size={16} color="#059669" />
+              <span>Official institutional binary: <code>{config.apkFileName}</code></span>
             </div>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <button 
               type="button" 
-              className="btn-primary-download"
+              className="btn-install-quick-download"
               onClick={onDownload}
             >
-              <Download size={20} />
-              <span>Download Official APK Now</span>
+              <Download size={15} />
+              <span>Download APK (v{config.version})</span>
             </button>
           </div>
         </div>
+
       </div>
     </section>
   );

@@ -5,12 +5,14 @@
 
 type InteractionEvent = 
   | 'download_apk_click'
+  | 'hero_download_click'
   | 'sticky_download_click'
   | 'qr_modal_opened'
   | 'share_clicked'
   | 'copy_link_clicked'
   | 'install_guide_opened'
   | 'screenshot_swiped'
+  | 'screenshot_gallery_scroll'
   | 'feature_category_explored';
 
 export function trackEvent(eventName: InteractionEvent, details?: Record<string, string | number>) {
