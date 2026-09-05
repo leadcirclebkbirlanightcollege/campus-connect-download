@@ -63,13 +63,13 @@ Configuration properties:
   "appName": "Campus Connect",
   "version": "1.0.0",
   "versionCode": 100,
-  "apkUrl": "/downloads/campus-connect-v1.0.0.apk",
-  "apkFileName": "campus-connect-v1.0.0.apk",
+  "apkUrl": "https://github.com/leadcirclebkbirlanightcollege/campus-connect-download/releases/download/v1.0.0/CampusConnect-v1.0.0.apk",
+  "apkFileName": "CampusConnect-v1.0.0.apk",
   "releaseDate": "September 2026",
-  "fileSize": "24.8 MB",
+  "fileSize": "6.9 MB",
   "minAndroidVersion": "Android 8.0 (Oreo) and above",
   "packageName": "in.indevs.campusconnect",
-  "sha256": "a7f3e498c89b012948d39e248b9cf6e021d6e35ab78c1308e2f8149e21785f40",
+  "sha256": "6ca101b1903a29a832325f95f29923ee169682000323198a749c7c0cb7d7b748",
   "status": "available",
   "releaseNotes": [ ... ]
 }

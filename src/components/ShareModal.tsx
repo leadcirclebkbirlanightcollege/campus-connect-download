@@ -16,7 +16,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
   version
 }) => {
   const [copied, setCopied] = useState(false);
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://download.campusconnect.indevs.in';
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://bkbnc-campus.vercel.app';
 
   if (!isOpen) return null;
 

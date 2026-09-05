@@ -63,6 +63,10 @@ export const App: React.FC = () => {
     const link = document.createElement('a');
     link.href = config.apkUrl;
     link.download = config.apkFileName;
+    if (config.apkUrl.startsWith('http')) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

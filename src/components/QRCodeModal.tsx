@@ -22,8 +22,12 @@ export const QRCodeComponent: React.FC<QRCodeSectionProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [copied, setCopied] = useState(false);
   
-  // Production official download URL
-  const downloadTargetUrl = `https://campus-connect-download.vercel.app${apkUrl}`;
+  // Production official download URL (supports direct links and relative paths)
+  const downloadTargetUrl = apkUrl.startsWith('http://') || apkUrl.startsWith('https://')
+    ? apkUrl
+    : typeof window !== 'undefined'
+      ? `${window.location.origin}${apkUrl}`
+      : `https://bkbnc-campus.vercel.app${apkUrl}`;
 
   useEffect(() => {
     if (canvasRef.current) {
