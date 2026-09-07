@@ -33,7 +33,7 @@ export const InstallationFaq: React.FC<InstallationFaqProps> = ({ config }) => {
       question: 'Who can use Campus Connect?',
       answer: (
         <p>
-          Campus Connect is exclusively designed for enrolled students, teaching faculty, and authorized administrative staff of B. K. Birla Night College, Kalyan.
+          Campus Connect is designed for students enrolled at <strong>B. K. Birla Night College, Kalyan</strong>, including B.Sc. (Computer Science) and affiliated programs.
         </p>
       )
     },
@@ -78,7 +78,7 @@ export const InstallationFaq: React.FC<InstallationFaqProps> = ({ config }) => {
       question: 'How do I log in?',
       answer: (
         <p>
-          Open Campus Connect and enter your college student or faculty login credentials provided by the Department of Computer Science or college administration.
+          Open Campus Connect and enter your student credentials provided for your enrolled course at B. K. Birla Night College.
         </p>
       )
     },

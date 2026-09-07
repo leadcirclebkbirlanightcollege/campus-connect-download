@@ -1,26 +1,40 @@
 import React from 'react';
 import { 
-  Users, 
-  GraduationCap, 
+  Home, 
   BookOpen, 
-  Calendar, 
-  CheckSquare, 
-  Award, 
+  Users, 
   Rocket, 
-  Briefcase,
+  UserCheck, 
   Network
 } from 'lucide-react';
 
 export const EcosystemView: React.FC = () => {
   const ecosystemPillars = [
-    { label: 'STUDENTS', icon: Users, desc: 'Central campus community' },
-    { label: 'FACULTY', icon: GraduationCap, desc: 'Academic leadership & guidance' },
-    { label: 'ACADEMICS', icon: BookOpen, desc: 'Timetables & study resources' },
-    { label: 'EVENTS', icon: Calendar, desc: 'College fests & technical symposia' },
-    { label: 'ATTENDANCE', icon: CheckSquare, desc: 'Real-time 75% compliance tracking' },
-    { label: 'ACTIVITIES', icon: Award, desc: 'Sports, cultural & departmental clubs' },
-    { label: 'E-CELL', icon: Rocket, desc: 'Student startup incubation' },
-    { label: 'OPPORTUNITIES', icon: Briefcase, desc: 'Internships & campus projects' }
+    { 
+      label: 'HOME HUB', 
+      icon: Home, 
+      desc: 'Daily check-in streaks (+10 pts), timetable status & quick access shortcuts' 
+    },
+    { 
+      label: 'ACADEMICS', 
+      icon: BookOpen, 
+      desc: 'Lectures, timetable, attendance history, assignments, documents & results' 
+    },
+    { 
+      label: 'COMMUNITY', 
+      icon: Users, 
+      desc: 'Events, announcements, class leaderboard rankings & learning circles' 
+    },
+    { 
+      label: 'E-CELL', 
+      icon: Rocket, 
+      desc: 'Vision to Venture: Ideas to Impact, stall hosting & student pitch initiatives' 
+    },
+    { 
+      label: 'STUDENT PROFILE', 
+      icon: UserCheck, 
+      desc: 'Verified student credentials, SYCS B.Sc. CS, completion tracking & privacy' 
+    }
   ];
 
   return (
@@ -29,15 +43,15 @@ export const EcosystemView: React.FC = () => {
         
         <div className="section-header-centered">
           <span className="section-super-eyebrow">
-            <Network size={14} /> Integrated Digital Infrastructure
+            <Network size={14} /> Integrated Digital Campus
           </span>
-          <h2 className="section-main-heading">Campus Connect Connects the Campus</h2>
+          <h2 className="section-main-heading">5 Core Pillars. One Connected Experience.</h2>
           <p className="section-sub-copy">
-            A single, cohesive platform bringing every facet of B. K. Birla Night College together into one unified experience.
+            Every module within Campus Connect works together to support daily student life at B. K. Birla Night College.
           </p>
         </div>
 
-        {/* Elegant Ecosystem System Visualizer */}
+        {/* Ecosystem Radial / Orbital System */}
         <div className="ecosystem-radial-system">
           
           {/* Central Hub */}
@@ -49,14 +63,14 @@ export const EcosystemView: React.FC = () => {
                 alt="Campus Connect Core" 
                 className="core-hub-logo" 
               />
-              <span className="core-hub-tag">CORE PLATFORM</span>
+              <span className="core-hub-tag">CENTRAL PLATFORM</span>
               <h3 className="core-hub-title">CAMPUS CONNECT</h3>
-              <span className="core-hub-sub">BKBNC Kalyan</span>
+              <span className="core-hub-sub">B. K. Birla Night College</span>
             </div>
           </div>
 
           {/* Connected Surrounding Orbitals */}
-          <div className="ecosystem-satellite-grid">
+          <div className="ecosystem-satellite-grid five-pillars">
             {ecosystemPillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (

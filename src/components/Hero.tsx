@@ -17,12 +17,23 @@ interface HeroProps {
   onDownload: () => void;
 }
 
+const HERO_TABS = [
+  { id: 'home', label: 'Home', image: '/assets/screens/screen-home.png', badge: 'Daily Hub' },
+  { id: 'academics', label: 'Academics', image: '/assets/screens/screen-academics.png', badge: 'Studies' },
+  { id: 'community', label: 'Community', image: '/assets/screens/screen-community.png', badge: 'Campus Life' },
+  { id: 'ecell', label: 'E-Cell', image: '/assets/screens/screen-ecell.png', badge: 'Vision to Venture' },
+  { id: 'profile', label: 'Profile', image: '/assets/screens/screen-profile.png', badge: 'Student ID' }
+];
+
 export const Hero: React.FC<HeroProps> = ({
   config,
   onOpenQR,
   onDownload
 }) => {
   const [downloading, setDownloading] = useState(false);
+  const [activeTab, setActiveTab] = useState('home');
+
+  const currentScreen = HERO_TABS.find(t => t.id === activeTab) || HERO_TABS[0];
 
   const handlePrimaryDownload = () => {
     setDownloading(true);
@@ -81,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({
                 <span className="hero-headline-accent">One Platform.</span>
               </h2>
               <p className="hero-description">
-                Stay connected with academics, announcements, attendance, events, activities and opportunities through one smart campus platform.
+                The official application for B. K. Birla Night College. Access your timetable, track attendance, complete assignments, view exam results, connect with campus announcements, and explore E-Cell student initiatives.
               </p>
             </div>
 
@@ -159,85 +170,47 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="hero-showcase-col">
             <div className="hero-device-wrapper">
               
+              {/* Screen Tab Switcher */}
+              <div className="hero-screen-tabs" role="tablist" aria-label="Interactive App Screen Switcher">
+                {HERO_TABS.map((tab) => (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeTab === tab.id}
+                    className={`hero-screen-tab-btn ${activeTab === tab.id ? 'active' : ''}`}
+                    onClick={() => {
+                      setActiveTab(tab.id);
+                      trackEvent('hero_screen_tab_click', { screen: tab.id });
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
               {/* Outer Phone Chassis */}
               <div className="hero-phone-chassis">
-                {/* Status bar / Notch */}
-                <div className="phone-top-notch">
-                  <span className="phone-clock">9:41</span>
-                  <div className="phone-speaker-pill" />
-                  <div className="phone-camera-lens" />
-                  <div className="phone-status-icons">
-                    <span className="status-dot" />
-                    <span className="status-battery" />
-                  </div>
-                </div>
-
-                {/* Device Screen UI: Campus Connect Real Dashboard */}
-                <div className="hero-screen-content">
-                  
-                  {/* Dashboard Header */}
-                  <div className="screen-dash-header">
-                    <div>
-                      <span className="dash-greeting">Welcome back,</span>
-                      <h3 className="dash-student-name">Atharva M.</h3>
-                      <span className="dash-roll">TYBSc CS • Roll 2026-042</span>
-                    </div>
-                    <div className="dash-avatar-badge">AM</div>
-                  </div>
-
-                  {/* Attendance Card with Progress Ring */}
-                  <div className="screen-attendance-widget">
-                    <div className="att-info">
-                      <span className="att-label">OVERALL ATTENDANCE</span>
-                      <div className="att-percent">82.4%</div>
-                      <span className="att-status">✓ 7.4% Above Mandatory 75%</span>
-                    </div>
-                    <div className="att-ring-graphic">
-                      <svg viewBox="0 0 36 36" className="circular-chart">
-                        <path 
-                          className="circle-bg" 
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path 
-                          className="circle-fill" 
-                          strokeDasharray="82, 100" 
-                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                      </svg>
-                      <span className="ring-text">82%</span>
-                    </div>
-                  </div>
-
-                  {/* Live Class Today */}
-                  <div className="screen-live-class">
-                    <div className="live-class-head">
-                      <span className="live-pill">NEXT LECTURE</span>
-                      <span className="live-time">10:45 AM</span>
-                    </div>
-                    <div className="live-subj-title">Data Structures &amp; Algorithms</div>
-                    <div className="live-room-prof">Room 204 • Prof. K. Deshmukh</div>
-                  </div>
-
-                  {/* Quick Notice Pill */}
-                  <div className="screen-notice-mini">
-                    <div className="notice-mini-dot" />
-                    <div className="notice-mini-text">
-                      <strong>Exam Notice:</strong> Semester schedule released by Examination Cell.
-                    </div>
-                  </div>
-
+                {/* Device Screen UI: Real Campus Connect Screenshot */}
+                <div className="hero-screen-viewport">
+                  <img 
+                    src={currentScreen.image} 
+                    alt={`Campus Connect ${currentScreen.label} Screen`}
+                    className="hero-screen-img"
+                    key={currentScreen.id}
+                  />
                 </div>
               </div>
 
-              {/* Floating Highlight Chips */}
+              {/* Floating Highlight Chips strictly from app screenshots */}
               <div className="floating-badge badge-attendance">
                 <CheckCircle2 size={14} color="#059669" />
-                <span>Real-Time Attendance</span>
+                <span>Risk &lt;75% Attendance Warning</span>
               </div>
 
               <div className="floating-badge badge-circulars">
                 <Sparkles size={14} color="#1D4ED8" />
-                <span>Verified Circulars</span>
+                <span>Daily Check-In +10 Pts</span>
               </div>
 
             </div>

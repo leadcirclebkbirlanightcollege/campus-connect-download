@@ -38,13 +38,11 @@ export const DEFAULT_APP_CONFIG: ReleaseConfig = {
   department: "Department of Computer Science",
   officialDomain: "bkbnc-campus.vercel.app",
   releaseNotes: [
-    "Official inaugural release for B. K. Birla Night College, Kalyan.",
-    "Integrated Student Dashboard with real-time academic schedules & updates.",
-    "Official Announcements & Circulars from the Department of Computer Science.",
-    "Authorized Attendance Tracking & live percentage metrics.",
-    "Digital Student Identity Card with cryptographic campus verification.",
-    "Interactive College Events, Activities, and Competitions directory.",
-    "E-Cell Experience: Discover Vision to Venture initiatives and startup activities.",
-    "Faculty & Academic Workspace for authorized attendance and lecture management."
+    "Official release for B. K. Birla Night College, Kalyan (Department of Computer Science).",
+    "Home Dashboard: Timetable status, attendance threshold warnings, and daily check-in streaks (+10 pts/day).",
+    "Academics Hub: Lectures, timetable, attendance history, assignments, documents, results, learning circles, and scan attendance.",
+    "Campus Community: Events, announcements, leaderboard rankings, learning circles, points, and help & support.",
+    "E-Cell ('Vision to Venture'): Ideas to Impact pipeline, student stall registrations (100 slots), and pitch initiatives.",
+    "Verified Student Profile: Digital student credentials (SYCS B.Sc. CS), profile completion tracker, and privacy settings."
   ]
 };

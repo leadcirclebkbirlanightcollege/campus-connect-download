@@ -40,7 +40,7 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="footer-mission-statement">
-              The official mobile gateway for students and faculty, unifying academics, attendance, announcements, and campus activities.
+              The official mobile application for students, unifying academics, attendance, timetable, community updates, and E-Cell initiatives.
             </p>
           </div>
 

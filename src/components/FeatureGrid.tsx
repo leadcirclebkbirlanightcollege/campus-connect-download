@@ -1,17 +1,21 @@
 import React from 'react';
 import { 
-  Bell, 
-  Sparkles, 
+  GraduationCap, 
+  Calendar, 
+  ClipboardCheck, 
   BookOpen, 
   FileText, 
-  Award, 
-  Calendar, 
-  TrendingUp, 
-  CheckSquare, 
-  CreditCard, 
-  Rocket, 
-  Briefcase, 
-  GraduationCap, 
+  Trophy, 
+  Users, 
+  QrCode, 
+  Megaphone, 
+  Zap, 
+  LifeBuoy, 
+  Flame, 
+  AlertTriangle, 
+  Store, 
+  UserCheck, 
+  ShieldCheck, 
   Layers
 } from 'lucide-react';
 
@@ -24,114 +28,174 @@ interface FeatureItem {
 interface FeatureGroup {
   category: string;
   badge: string;
+  headline: string;
   items: FeatureItem[];
 }
 
 export const FeatureGrid: React.FC = () => {
   const groups: FeatureGroup[] = [
     {
-      category: 'STAY CONNECTED',
-      badge: 'Communication',
+      category: 'ACADEMICS',
+      badge: 'Studies & Schedule',
+      headline: 'Everything about your studies',
       items: [
         {
-          icon: Bell,
-          title: 'Announcements',
-          desc: 'Timely college circulars, urgent administrative alerts, and departmental notices.'
+          icon: GraduationCap,
+          title: 'Lectures',
+          desc: 'Live & upcoming sessions'
         },
         {
-          icon: Sparkles,
-          title: 'Notifications',
-          desc: 'Instant delivery for lecture updates, circular releases, and critical campus alerts.'
-        }
-      ]
-    },
-    {
-      category: 'STUDY',
-      badge: 'Academics',
-      items: [
+          icon: Calendar,
+          title: 'Timetable',
+          desc: 'Your weekly schedule'
+        },
+        {
+          icon: ClipboardCheck,
+          title: 'Attendance',
+          desc: 'History & percentage tracking'
+        },
         {
           icon: BookOpen,
-          title: 'Academics',
-          desc: 'Access lecture timetables, curriculum outlines, and official study resources.'
+          title: 'Assignments',
+          desc: 'Tasks & submissions'
         },
         {
           icon: FileText,
-          title: 'Assignments',
-          desc: 'Track academic tasks, assignment guidelines, and project submission deadlines.'
+          title: 'Documents',
+          desc: 'Notes & study material'
         },
         {
-          icon: Award,
-          title: 'Results / Marks',
-          desc: 'View published internal test scores, practical grades, and semester marks.'
+          icon: Trophy,
+          title: 'Results',
+          desc: 'Exam performance'
+        },
+        {
+          icon: Users,
+          title: 'Learning Circles',
+          desc: 'Enrolled programmes'
+        },
+        {
+          icon: QrCode,
+          title: 'Scan Attendance',
+          desc: 'Mark yourself present'
         }
       ]
     },
     {
-      category: 'PARTICIPATE',
+      category: 'COMMUNITY',
       badge: 'Campus Life',
+      headline: 'Campus life, together',
       items: [
         {
           icon: Calendar,
           title: 'Events',
-          desc: 'Discover college fests, technical conferences, hackathons, and guest lectures.'
+          desc: 'Campus events & registrations'
         },
         {
-          icon: Award,
-          title: 'Activities',
-          desc: 'Join inter-collegiate competitions, sports meets, and departmental initiatives.'
+          icon: Megaphone,
+          title: 'Announcements',
+          desc: 'Important campus updates'
         },
         {
-          icon: TrendingUp,
-          title: 'Student Engagement',
-          desc: 'Collaborate with student clubs, committees, and campus innovation groups.'
+          icon: Trophy,
+          title: 'Leaderboard',
+          desc: 'Class & college rankings'
+        },
+        {
+          icon: Users,
+          title: 'Learning Circles',
+          desc: 'Communities you\'ve joined'
+        },
+        {
+          icon: Zap,
+          title: 'Points',
+          desc: 'Rewards & activity balance'
+        },
+        {
+          icon: LifeBuoy,
+          title: 'Help & Support',
+          desc: 'Reach the campus team'
         }
       ]
     },
     {
-      category: 'TRACK',
-      badge: 'Identity & Records',
+      category: 'E-CELL',
+      badge: 'Vision to Venture',
+      headline: 'Fostering student ventures & innovation',
       items: [
         {
-          icon: CheckSquare,
-          title: 'Attendance',
-          desc: 'Monitor real-time lecture attendance records and track semester 75% compliance.'
+          icon: Store,
+          title: 'Register a Stall',
+          desc: '100 vendor slots available for student businesses'
         },
         {
-          icon: CreditCard,
-          title: 'Digital ID',
-          desc: 'Access your digitized campus identification card for gate and library entry.'
+          icon: Calendar,
+          title: 'Explore Events',
+          desc: 'Pitch competitions, founder clinics & exhibitions'
+        },
+        {
+          icon: Zap,
+          title: 'Submit Idea & Claim Points',
+          desc: 'Submit student venture concepts and earn reward points'
+        },
+        {
+          icon: Layers,
+          title: '4-Stage Pathway',
+          desc: 'IDEAS → INNOVATION → ENTREPRENEURSHIP → IMPACT'
         }
       ]
     },
     {
-      category: 'EXPLORE',
-      badge: 'Growth',
+      category: 'HOME & DAILY ENGAGEMENT',
+      badge: 'Central Dashboard',
+      headline: 'Daily habits & instant access',
       items: [
         {
-          icon: Rocket,
-          title: 'E-Cell',
-          desc: 'Engage with the Entrepreneurship Cell, startup incubation, and campus venture stalls.'
+          icon: Flame,
+          title: 'Daily Check-In',
+          desc: '+10 pts per day with continuous daily streak tracking'
         },
         {
-          icon: Briefcase,
-          title: 'Opportunities',
-          desc: 'Find student internships, career workshops, research projects, and campus roles.'
+          icon: AlertTriangle,
+          title: 'Attendance Risk Warning',
+          desc: 'Instant visual alert when attendance drops below the 75% threshold'
+        },
+        {
+          icon: QrCode,
+          title: 'Scan QR Button',
+          desc: 'One-tap camera QR scanner on your home dashboard'
+        },
+        {
+          icon: Layers,
+          title: 'Quick Access Launcher',
+          desc: 'Attendance, Timetable, Tasks, Results, Digital ID, Ranks, and E-Cell'
         }
       ]
     },
     {
-      category: 'FACULTY',
-      badge: 'Academic Workspace',
+      category: 'PROFILE & IDENTITY',
+      badge: 'Verified Student',
+      headline: 'Official student credentials',
       items: [
         {
-          icon: GraduationCap,
-          title: 'Lectures & Attendance',
-          desc: 'Authorized workspace for faculty to schedule lectures and log daily attendance.'
+          icon: UserCheck,
+          title: 'Verified Student Account',
+          desc: 'Atharv Jadhav • SYCS • B.Sc. (Computer Science) (1151061)'
         },
         {
-          icon: Award,
-          title: 'Examinations & Marks',
-          desc: 'Secure faculty workflows for internal evaluation and grade management.'
+          icon: ShieldCheck,
+          title: '100% Profile Completion',
+          desc: 'Verified enrollment under B. K. Birla Night Arts, Science & Commerce College'
+        },
+        {
+          icon: FileText,
+          title: 'Account Settings',
+          desc: 'Edit profile (name, email, photo), privacy controls, and security'
+        },
+        {
+          icon: Megaphone,
+          title: 'Preferences',
+          desc: 'Notification settings for lectures, announcements, and alerts'
         }
       ]
     }
@@ -143,20 +207,23 @@ export const FeatureGrid: React.FC = () => {
         
         <div className="section-header-centered">
           <span className="section-super-eyebrow">
-            <Layers size={14} /> Comprehensive Feature Set
+            <Layers size={14} /> Official Application Modules
           </span>
           <h2 className="section-main-heading">Everything You Need. One Campus.</h2>
           <p className="section-sub-copy">
-            A cohesive mobile platform designed specifically around the academic and daily needs of B. K. Birla Night College, Kalyan.
+            Explore every module and feature built into the official Campus Connect app for B. K. Birla Night College.
           </p>
         </div>
 
-        {/* Structured Grid */}
+        {/* Structured Grid strictly grounded in the app */}
         <div className="structured-feature-matrix">
           {groups.map((group, gIdx) => (
             <div key={gIdx} className="feature-matrix-card">
               <div className="matrix-card-header">
-                <span className="matrix-category-label">{group.category}</span>
+                <div>
+                  <span className="matrix-category-label">{group.category}</span>
+                  <div className="matrix-card-subline">{group.headline}</div>
+                </div>
                 <span className="matrix-badge-chip">{group.badge}</span>
               </div>
 

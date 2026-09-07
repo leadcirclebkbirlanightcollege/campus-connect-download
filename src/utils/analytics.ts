@@ -13,6 +13,7 @@ type InteractionEvent =
   | 'install_guide_opened'
   | 'screenshot_swiped'
   | 'screenshot_gallery_scroll'
+  | 'hero_screen_tab_click'
   | 'feature_category_explored';
 
 export function trackEvent(eventName: InteractionEvent, details?: Record<string, string | number>) {
